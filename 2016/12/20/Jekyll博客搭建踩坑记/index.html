@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jekyll博客搭建踩坑记 | dcharlie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">首页</a>
+    
+  
+    
+      <a href="/archives">归档</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2016/12/20/Jekyll博客搭建踩坑记/">Jekyll博客搭建踩坑记</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">December 20 2016</p>
+  </section>
+
+  <section class="article-entry">
+    <p>##前端‘学习’？？？
+###Jekyll博客搭建踩坑记！！！
+######——————基于window10平台
+####ruby安装
+上<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">rubyinstaller</a>下载ruby&lt;/br&gt;
+默认路径安装（<strong>记得勾选上添加到环境变量</strong>）&lt;/br&gt;
+等待安装完成,在命令行输入<code>ruby -v</code>,显示版本号说明安装完成;&lt;/br&gt;
+####Devkit安装
+在<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">rubyinstaller</a>下载并解压&lt;/br&gt;
+进入解压的文件夹,打开命令行,输入<code>ruby dk.rb init</code>生成config.yml配置文件&lt;/br&gt;
+打开文件看是否已添加ruby的安装路径,没有则手动添加,格式*-空格ruby的安装目录*&lt;/br&gt;
+然后执行命令<code>ruby dk.rb install</code>;&lt;/br&gt;
+####安装rubygems
+先上步骤后吐槽~~
+在<a href="https://rubygems.org/pages/download/" target="_blank" rel="external">RubyGems</a>下载zip并解压&lt;/br&gt;
+进入解压目录,打开命令行输入<code>ruby steup.rb</code>等待安装完成
+<code>gem -v</code>查看版本！！！&lt;/br&gt;
+####吐槽
+看jekyll教程万脸懵逼~为什么最新的ruby自带的gem才2.5x,教程上要求gem版本至少<code>2.60</code>以上。。。
+这里是个坑。。。然后导致我yekyll安装不了。。。然后百度一下说更改淘宝源
+&lt;pre&gt;&lt;code&gt;
+//删除默认的官方源
+gem sources -r https://rubygems.org/
+//添加淘宝源
+gem sources -a https://ruby.taobao.org/
+//查看当前源
+gem sources -l<br>
+&lt;/code&gt;&lt;/pre&gt;
+what???这里我弄了好久。。。&lt;/br&gt;
+把原来的源删了。。。&lt;/br&gt;
+成功了。。。&lt;/br&gt;
+新的源添加不进去&lt;/br&gt;
+把旧的源还不回去...&lt;/br&gt;
+???&lt;/br&gt;
+又百度了一下https要换http？？？
+。。。没啥卵用
+后来才知道淘宝的源关闭了
+找到一个<em>ruby中文社区？？？</em>&lt;/br&gt;
+按他的方法更改源
+<code>gem source -a https://gems.ruby-china.org</code>
+是不是source少了个s？？？
+我不知道~~反正这样我电脑改不了。。。&lt;/br&gt;
+然后我又按它的方法安装<strong>gems</strong>
+&lt;pre&gt;<code>gem update --system</code>&lt;/pre&gt;
+但是没啥卵用
+最后在segmentfault找了一篇ruby安装教程才搞定gems的安装
+###对啦，我的源还是空的呢
+所以，用又用之前的<code>gem sources -a url</code>
+######可是，还是用不了，一样中文社区的源添不进、原来的源还不回。。。
+######在我把问题写好截图想发上segmentfault时，发现发不上去了。。。segmentfault又挂了/(ㄒoㄒ)/~~挂的真是时候
+######就在这时机智的我想的上面淘宝源那个https、http有两种,https://gems.ruby-china.org我只试了https，于是我输入
+&lt;pre&gt;&lt;code&gt;gem sources -a http://gems.ruby-china.org&lt;/code&gt;&lt;/pre&gt;
+好了！！！！！！！！！！</p>
+<pre><code class="language-搭个博客的这么多坑凸(艹皿艹"></code></pre>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="https://github.com/dcharlie123/pic/blob/master/avatar.jpg" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> dcharlie </p>
+      <p class="subtitle"> do sth what u like,f**k the rest.keep moving </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="DrakeLeung"
+  href="https://twitter.com/intent/tweet?text=##前端‘学习’？？？
+###Jekyl"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'drakeleung';
+  
+  var disqus_url = 'http://yoursite.com/2016/12/20/Jekyll博客搭建踩坑记/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>
