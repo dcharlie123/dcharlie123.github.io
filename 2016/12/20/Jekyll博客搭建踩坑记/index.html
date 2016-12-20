@@ -34,20 +34,60 @@
   </section>
 
   <section class="article-entry">
-    <p>##前端‘学习’？？？</p>
-<p>###Jekyll博客搭建踩坑记！！！</p>
-<p>######——————基于window10平台</p>
-<p>####ruby安装<br>上<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">rubyinstaller</a>下载ruby<br><br>默认路径安装（<strong>记得勾选上添加到环境变量</strong>）<br><br>等待安装完成,在命令行输入<code>ruby -v</code>,显示版本号说明安装完成;<br></p>
-<p>####Devkit安装<br>在<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">rubyinstaller</a>下载并解压<br><br>进入解压的文件夹,打开命令行,输入<code>ruby dk.rb init</code>生成config.yml配置文件<br><br>打开文件看是否已添加ruby的安装路径,没有则手动添加,格式<em>-空格ruby的安装目录</em><br><br>然后执行命令<code>ruby dk.rb install</code>;<br></p>
-<p>####安装rubygems<br>先上步骤后吐槽~~<br>在<a href="https://rubygems.org/pages/download/" target="_blank" rel="external">RubyGems</a>下载zip并解压<br><br>进入解压目录,打开命令行输入<code>ruby steup.rb</code>等待安装完成<br><code>gem -v</code>查看版本！！！<br></p>
-<p>####吐槽<br>看jekyll教程万脸懵逼~为什么最新的ruby自带的gem才2.5x,教程上要求gem版本至少<code>2.60</code>以上。。。<br>这里是个坑。。。然后导致我yekyll安装不了。。。然后百度一下说更改淘宝源</p>
-<p><pre><code><br>//删除默认的官方源<br>gem sources -r <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>//添加淘宝源<br>gem sources -a <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a><br>//查看当前源<br>gem sources -l<br></code></pre><br>what???这里我弄了好久。。。<br><br>把原来的源删了。。。<br><br>成功了。。。<br><br>新的源添加不进去<br><br>把旧的源还不回去…<br><br>???<br><br>又百度了一下https要换http？？？<br>。。。没啥卵用<br>后来才知道淘宝的源关闭了<br>找到一个<em>ruby中文社区？？？</em><br><br>按他的方法更改源<br><code>gem source -a https://gems.ruby-china.org</code><br>是不是source少了个s？？？<br>我不知道~~反正这样我电脑改不了。。。<br><br>然后我又按它的方法安装<strong>gems</strong></p>
-<p><pre><code>gem update --system</code></pre><br>但是没啥卵用<br>最后在segmentfault找了一篇ruby安装教程才搞定gems的安装</p>
-<p>###对啦，我的源还是空的呢<br>所以，用又用之前的<code>gem sources -a url</code></p>
-<p>######可是，还是用不了，一样中文社区的源添不进、原来的源还不回。。。</p>
-<p>######在我把问题写好截图想发上segmentfault时，发现发不上去了。。。segmentfault又挂了/(ㄒoㄒ)/~~挂的真是时候</p>
-<p>######就在这时机智的我想的上面淘宝源那个https、http有两种,<a href="https://gems.ruby-china.org我只试了https，于是我输入" target="_blank" rel="external">https://gems.ruby-china.org我只试了https，于是我输入</a></p>
-<p><pre><code>gem sources -a <a href="http://gems.ruby-china.org" target="_blank" rel="external">http://gems.ruby-china.org</a></code></pre><br>好了！！！！！！！！！！<br>~~~搭个博客的这么多坑凸(艹皿艹 )</p>
+    <p>##前端‘学习’？？？
+###Jekyll博客搭建踩坑记！！！
+######——————基于window10平台
+####ruby安装
+上<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">rubyinstaller</a>下载ruby&lt;/br&gt;
+默认路径安装（<strong>记得勾选上添加到环境变量</strong>）&lt;/br&gt;
+等待安装完成,在命令行输入<code>ruby -v</code>,显示版本号说明安装完成;&lt;/br&gt;
+####Devkit安装
+在<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">rubyinstaller</a>下载并解压&lt;/br&gt;
+进入解压的文件夹,打开命令行,输入<code>ruby dk.rb init</code>生成config.yml配置文件&lt;/br&gt;
+打开文件看是否已添加ruby的安装路径,没有则手动添加,格式*-空格ruby的安装目录*&lt;/br&gt;
+然后执行命令<code>ruby dk.rb install</code>;&lt;/br&gt;
+####安装rubygems
+先上步骤后吐槽~~
+在<a href="https://rubygems.org/pages/download/" target="_blank" rel="external">RubyGems</a>下载zip并解压&lt;/br&gt;
+进入解压目录,打开命令行输入<code>ruby steup.rb</code>等待安装完成
+<code>gem -v</code>查看版本！！！&lt;/br&gt;
+####吐槽
+看jekyll教程万脸懵逼~为什么最新的ruby自带的gem才2.5x,教程上要求gem版本至少<code>2.60</code>以上。。。
+这里是个坑。。。然后导致我yekyll安装不了。。。然后百度一下说更改淘宝源
+&lt;pre&gt;&lt;code&gt;
+//删除默认的官方源
+gem sources -r https://rubygems.org/
+//添加淘宝源
+gem sources -a https://ruby.taobao.org/
+//查看当前源
+gem sources -l<br>
+&lt;/code&gt;&lt;/pre&gt;
+what???这里我弄了好久。。。&lt;/br&gt;
+把原来的源删了。。。&lt;/br&gt;
+成功了。。。&lt;/br&gt;
+新的源添加不进去&lt;/br&gt;
+把旧的源还不回去...&lt;/br&gt;
+???&lt;/br&gt;
+又百度了一下https要换http？？？
+。。。没啥卵用
+后来才知道淘宝的源关闭了
+找到一个<em>ruby中文社区？？？</em>&lt;/br&gt;
+按他的方法更改源
+<code>gem source -a https://gems.ruby-china.org</code>
+是不是source少了个s？？？
+我不知道~~反正这样我电脑改不了。。。&lt;/br&gt;
+然后我又按它的方法安装<strong>gems</strong>
+&lt;pre&gt;<code>gem update --system</code>&lt;/pre&gt;
+但是没啥卵用
+最后在segmentfault找了一篇ruby安装教程才搞定gems的安装
+###对啦，我的源还是空的呢
+所以，用又用之前的<code>gem sources -a url</code>
+######可是，还是用不了，一样中文社区的源添不进、原来的源还不回。。。
+######在我把问题写好截图想发上segmentfault时，发现发不上去了。。。segmentfault又挂了/(ㄒoㄒ)/~~挂的真是时候
+######就在这时机智的我想的上面淘宝源那个https、http有两种,https://gems.ruby-china.org我只试了https，于是我输入
+&lt;pre&gt;&lt;code&gt;gem sources -a http://gems.ruby-china.org&lt;/code&gt;&lt;/pre&gt;
+好了！！！！！！！！！！</p>
+<pre><code class="language-搭个博客的这么多坑凸(艹皿艹"></code></pre>
 
   </section>
 </article>
@@ -67,8 +107,8 @@
   class="twitter-share-button"
   data-size="large"
   data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text=##前端‘学习’？？？</p>
-<p>#"
+  href="https://twitter.com/intent/tweet?text=##前端‘学习’？？？
+###Jekyl"
 >
   Tweet
 </a>
