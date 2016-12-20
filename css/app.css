@@ -128,16 +128,19 @@ main.index {
     color: rgba(0, 0, 0, 0.4); }
   main.index .article-title {
     margin: 0;
-    padding-left: 22.5px;
+    padding-left: 15px;
     padding-top: 15px;
     text-transform: capitalize; }
   main.index .article-title:hover {
     color: #5badf0; }
   main.index .article-date {
     color: #aaa;
-    padding-left: 630px;
+    padding-left: 15px;
     padding-top: 15px;
     padding-bottom: 15px; }
+  main.index .article-more {
+    color: #5badf0;
+    float: right; }
   main.index .page-nav {
     text-align: center;
     margin-top: 45px;
