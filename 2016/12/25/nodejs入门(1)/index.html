@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Nodejs入门(1) | dcharlie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">首页</a>
+    
+  
+    
+      <a href="/archives">归档</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2016/12/25/nodejs入门(1)/">Nodejs入门(1)</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">December 25 2016</p>
+  </section>
+
+  <section class="article-entry">
+    <h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><h3 id="url-parse"><a href="#url-parse" class="headerlink" title="url.parse()"></a>url.parse()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">    url.parse(<span class="string">'http://www.imooc.com/video/6710'</span>);</div><div class="line"><span class="comment">/* </span></div><div class="line">Url &#123;</div><div class="line">  protocol: 'http:',//协议</div><div class="line">  slashes: true,</div><div class="line">  auth: null,</div><div class="line">  host: 'www.imooc.com',//域名</div><div class="line">  port: null,//端口</div><div class="line">  hostname: 'www.imooc.com',//主机名</div><div class="line">  hash: null,//哈希</div><div class="line">  search: null,//查询</div><div class="line">  query: null,</div><div class="line">  pathname: '/video/6710',</div><div class="line">  path: '/video/6710',//资源路径名</div><div class="line">  href: 'http://www.imooc.com/video/6710' &#125;</div><div class="line">*/</div><div class="line">    url.parse(<span class="string">'http://imooc:8080/course/list?from=scott&amp;course=node#floor1'</span>);</div><div class="line"><span class="comment">/*</span></div><div class="line">Url &#123;</div><div class="line">  protocol: 'http:',</div><div class="line">  slashes: true,</div><div class="line">  auth: null,</div><div class="line">  host: 'imooc:8080',</div><div class="line">  port: '8080',</div><div class="line">  hostname: 'imooc',</div><div class="line">  hash: '#floor1',</div><div class="line">  search: '?from=scott&amp;course=node',</div><div class="line">  query: 'from=scott&amp;course=node',</div><div class="line">  pathname: '/course/list',</div><div class="line">  path: '/course/list?from=scott&amp;course=node',</div><div class="line">  href: 'http://imooc:8080/course/list?from=scott&amp;course=node#floor1' &#125;</div><div class="line">*/</div></pre></td></tr></table></figure>
+<p>url.parse可以传多个参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">    url.parse(<span class="string">'http://imooc:8080/course/list?from=scott&amp;course=node#floor1'</span>,<span class="literal">true</span>);</div><div class="line"><span class="comment">/*</span></div><div class="line">Url &#123;</div><div class="line">  protocol: 'http:',</div><div class="line">  slashes: true,</div><div class="line">  auth: null,</div><div class="line">  host: 'imooc:8080',</div><div class="line">  port: '8080',</div><div class="line">  hostname: 'imooc',</div><div class="line">  hash: '#floor1',</div><div class="line">  search: '?from=scott&amp;course=node',</div><div class="line">  query: &#123; from: 'scott', course: 'node' &#125;,         //被解析成键值对</div><div class="line">  pathname: '/course/list',</div><div class="line">  path: '/course/list?from=scott&amp;course=node',</div><div class="line">  href: 'http://imooc:8080/course/list?from=scott&amp;course=node#floor1' &#125;</div><div class="line">  */</div><div class="line">url.parse(<span class="string">'//imooc:8080/course/list?from=scott&amp;course=node#floor1'</span>,<span class="literal">true</span>,<span class="literal">true</span>);</div><div class="line"><span class="comment">//host</span></div></pre></td></tr></table></figure>
+<h3 id="url-format"><a href="#url-format" class="headerlink" title="url.format()"></a>url.format()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">    url.format(&#123;</div><div class="line">        <span class="attr">protocol</span>: <span class="string">'http:'</span>,</div><div class="line">        <span class="attr">slashes</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">auth</span>: <span class="literal">null</span>,</div><div class="line">        <span class="attr">host</span>: <span class="string">'imooc:8080'</span>,</div><div class="line">        <span class="attr">port</span>: <span class="string">'8080'</span>,</div><div class="line">        <span class="attr">hostname</span>: <span class="string">'imooc'</span>,</div><div class="line">        <span class="attr">hash</span>: <span class="string">'#floor1'</span>,</div><div class="line">        <span class="attr">search</span>: <span class="string">'?from=scott&amp;course=node'</span>,</div><div class="line">        <span class="attr">query</span>: <span class="string">'from=scott&amp;course=node'</span>,</div><div class="line">        <span class="attr">pathname</span>: <span class="string">'/course/list'</span>,</div><div class="line">        <span class="attr">path</span>: <span class="string">'/course/list?from=scott&amp;course=node'</span>,</div><div class="line">        <span class="attr">href</span>: <span class="string">'http://imooc:8080/course/list?from=scott&amp;course=node#floor1'</span> &#125;)</div><div class="line"><span class="comment">//'http://imooc:8080/course/list?from=scott&amp;course=node#floor1'</span></div></pre></td></tr></table></figure>
+<h3 id="url-resolve"><a href="#url-resolve" class="headerlink" title="url.resolve()"></a>url.resolve()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url.resolve(<span class="string">'http://imooc.com/'</span>,<span class="string">'/course/list'</span>)</div><div class="line"><span class="comment">//'http://imooc.com/course/list'</span></div></pre></td></tr></table></figure>
+<h2 id="querystring"><a href="#querystring" class="headerlink" title="querystring"></a>querystring</h2><p>序列化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> querystring.stringify(&#123;<span class="attr">name</span>:<span class="string">'scott'</span>,<span class="attr">course</span>:[<span class="string">'jade'</span>,<span class="string">'node'</span>],<span class="attr">from</span>:<span class="string">''</span>&#125;)</div><div class="line"><span class="comment">//'name=scott&amp;course=jade&amp;course=node&amp;from='</span></div></pre></td></tr></table></figure>
+<p>第二个参数:连接符<br>第三个参数:key和item间的符号</p>
+<p>反序列化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">querystring.parse()</div></pre></td></tr></table></figure>
+<p>第二、三个参数同上,可以传第四个参数。</p>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> dcharlie </p>
+      <p class="subtitle"> do sth what u like,f**k the rest.keep moving </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="DrakeLeung"
+  href="https://twitter.com/intent/tweet?text= id="url"><a href="#"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'drakeleung';
+  
+  var disqus_url = 'http://yoursite.com/2016/12/25/nodejs入门(1)/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>
