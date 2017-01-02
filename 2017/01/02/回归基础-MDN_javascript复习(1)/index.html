@@ -61,6 +61,22 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">const</span> f = <span class="number">5</span>;<span class="comment">//报错</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> g = <span class="number">5</span>;</div><div class="line">    <span class="keyword">var</span> g;<span class="comment">//报错</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>然而,对象属性是不受保护的,所以可以使用如下语句来执行。</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> MY_OBJECT = &#123;<span class="string">"key"</span>: <span class="string">"value"</span>&#125;;</div><div class="line">MY_OBJECT.key = <span class="string">"otherValue"</span>;</div></pre></td></tr></table></figure>
+<h2 id="数据结构和类型"><a href="#数据结构和类型" class="headerlink" title="数据结构和类型"></a>数据结构和类型</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>JavaScript语言可以识别下面 7 种不同类型的值：</p>
+<ul>
+<li>六种 原型 数据类型:<ul>
+<li>Boolean.  布尔值，true 和 false.</li>
+<li>null. 一个表明 null 值的特殊关键字。 JavaScript 是大小写敏感的，因此 null 与 Null、NULL或其他变量完全不同。</li>
+<li>undefined.  变量未定义时的属性。</li>
+<li>Number.  表示数字，例如： 42 或者 3.14159。</li>
+<li>String.  表示字符串，例如：”Howdy”</li>
+<li>Symbol ( 在 ECMAScript 6 中新添加的类型).。一种数据类型，它的实例是唯一且不可改变的。</li>
+</ul>
+</li>
+<li>以及 Object 对象</li>
+</ul>
+<p><strong>注意</strong><br>严格模式下，八进制整数字面量必须以0o或0O开头，而不能以0开头。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = &#123;<span class="attr">a</span>: <span class="string">"alpha"</span>, <span class="number">2</span>: <span class="string">"two"</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(foo.a);    <span class="comment">// alpha</span></div><div class="line"><span class="built_in">console</span>.log(foo[<span class="number">2</span>]);   <span class="comment">// two</span></div><div class="line"><span class="comment">//console.log(foo.2);  // Error: missing ) after argument list</span></div><div class="line"><span class="comment">//console.log(foo[a]); // Error: a is not defined</span></div><div class="line"><span class="built_in">console</span>.log(foo[<span class="string">"a"</span>]); <span class="comment">// alpha</span></div><div class="line"><span class="built_in">console</span>.log(foo[<span class="string">"2"</span>]); <span class="comment">// two</span></div></pre></td></tr></table></figure>
+
   </section>
 </article>
 
