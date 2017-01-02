@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>正则表达式 | dcharlie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">首页</a>
+    
+  
+    
+      <a href="/archives">归档</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2017/01/02/回归基础-MDN_javascript复习(1)/">正则表达式</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">January 02 2017</p>
+  </section>
+
+  <section class="article-entry">
+    <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 单行注释</span></div><div class="line"></div><div class="line"><span class="comment">/* 这是一个多行注释</span></div><div class="line">多行注释</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="comment">/* 但是, 你不能, /* 嵌套注释 */</span> 语法错误 *<span class="regexp">/</span></div></pre></td></tr></table></figure>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>JavaScript有三种声明。</p>
+<p><code>var</code>声明一个变量，可选择将其初始化为一个值。<br><code>let</code>声明一个块作用域的局部变量(block scope local variable)，可选择将其初始化为一个值。<br><code>const</code>声明一个只读的常量。</p>
+<ul>
+<li><p><code>var x=42;</code>使用关键字<code>var</code>声明</p>
+</li>
+<li><p><code>x=42;</code>这样声明是全局变量，在严格模式下产生一个 ReferenceError。<strong>不推荐</strong></p>
+</li>
+<li><p>使用关键词 <code>let</code>。例如 <code>let y = 13;</code>。这个语法可以用来声明块作用域的局部变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(x); <span class="comment">// 5</span></div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line"><span class="keyword">let</span> y = <span class="number">5</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(y); <span class="comment">// ReferenceError: y is not defined</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>undefined 值在布尔类型环境中会被当作 false。</p>
+</li>
+<li><p>数值类型环境中 undefined 值会被转换为 NaN。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;</div><div class="line"><span class="comment">// 计算为 NaN</span></div><div class="line">a + <span class="number">2</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当你对一个 null 变量求值时，空值 null 在数值类型环境中会被当作0来对待，而布尔类型环境中会被当作 false。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="literal">null</span>;</div><div class="line"><span class="keyword">typeof</span>(n);<span class="comment">// "object"</span></div><div class="line"><span class="comment">// The Null type has exactly one value, called null.</span></div><div class="line"><span class="built_in">console</span>.log(n * <span class="number">32</span>); <span class="comment">// 0</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><em>用 var 或 let 声明的且未赋初值的变量，值会被设定为 undefined。</em><br>试图访问一个未声明的变量或者访问一个使用 let 声明的但未初始化的变量会导致一个 ReferenceError 异常被抛出：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;</div><div class="line"><span class="comment">// a 的值是 undefined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"The value of a is "</span> + a); </div><div class="line"></div><div class="line"><span class="comment">// Uncaught ReferenceError: b is not defined</span></div><div class="line"><span class="comment">//b未声明使用报错</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"The value of b is "</span> + b); </div><div class="line"></div><div class="line"><span class="comment">// c 的值是 undefined</span></div><div class="line"><span class="comment">//c变量声明提升 </span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"The value of c is "</span> + c); </div><div class="line"><span class="keyword">var</span> c;</div><div class="line"></div><div class="line"><span class="comment">// Uncaught ReferenceError: x is not defined </span></div><div class="line"><span class="comment">//在 ECMAScript 2015 中，let（const）将不会提升变量到代码块的顶部。</span></div><div class="line"><span class="comment">//因此，在变量声明之前引用这个变量，将抛出错误ReferenceError。</span></div><div class="line"><span class="comment">//这个变量将从代码块一开始的时候就处在一个“暂时性死区”，直到这个变量被声明为止。</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"The value of x is "</span> + x); </div><div class="line"><span class="keyword">let</span> x;</div></pre></td></tr></table></figure>
+<h3 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h3>
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> dcharlie </p>
+      <p class="subtitle"> do sth what u like,f**k the rest.keep moving </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="DrakeLeung"
+  href="https://twitter.com/intent/tweet?text= id="注释"><a href="#注"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'drakeleung';
+  
+  var disqus_url = 'http://yoursite.com/2017/01/02/回归基础-MDN_javascript复习(1)/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>
