@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>yarn体验 | dcharlie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">首页</a>
+    
+  
+    
+      <a href="/archives">归档</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2017/01/11/yarn体验/">yarn体验</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">January 11 2017</p>
+  </section>
+
+  <section class="article-entry">
+    <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果已经安装了npm,可以用<code>npm install yarn -g</code>全局安装,也可以上官网<a href="https://yarnpkg.com/" target="_blank" rel="external">yarn</a>参考其他安装方法。<br><code>yarn -version</code>或者<code>yarn -V</code>参考yarn版本</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="项目下初始化"><a href="#项目下初始化" class="headerlink" title="项目下初始化"></a>项目下初始化</h3><p>其实跟npm一样, 在项目文件夹下运行命令行,输入<code>yarn init</code>,接下来就跟<code>npm init</code>一样,询问你</p>
+<ul>
+<li>name : 项目名</li>
+<li>version : 版本号</li>
+<li>description : 项目描述</li>
+<li>entry point : 入口文件</li>
+<li>git repository： git项目链接地址</li>
+<li>author : 作者</li>
+<li>license : 协议<br>然后会自动生成package.json文件<h3 id="添加包"><a href="#添加包" class="headerlink" title="添加包"></a>添加包</h3>通过命令行<code>yarn add [package]</code>安装需要的包,会自动添加到package.json中,还可以通过<code>yarn add [package]@[version]</code>带版本号安装<br>用<code>yarn upgrade [package]</code>更新包,同样的<code>yarn upgrade [package]@[version]</code>更新到某一版本<br><code>yarn add [package] --dev</code><br><em>yarn有一个功能————离线安装包依赖</em><br>命令:<code>yarn add [package] --offline</code><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3>跟<code>npm install</code>类似的命令<code>yarn install</code>,yarn也可以直接用<code>yarn</code>就安装<h3 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h3><code>yarn remove [package]</code>删除包命令<blockquote>
+<p>yarn管理器有一个很重要的文件需要注意，就是yarn.lock，这个是用来依赖的正确性，快速可靠安装的；是执行cli的时候自动生成的，在项目的根目录下，需要保留！！！！不要编辑它，这是自动生成的<br>在其他电脑初始化，必须记得把package.json和yarn.lock复制过去<br>官网npm和yarn的对比<br>| npm |    Yarn |<br>|—–|:—–|<br>| npm install |    yarn install |<br>| (N/A) |    yarn install –flat |<br>| (N/A) |    yarn install –har |<br>| (N/A) |    yarn install –no-lockfile |<br>| (N/A) |    yarn install –pure-lockfile |<br>| npm install [package] | (N/A) |<br>| npm install –save [package] | yarn add [package] |<br>| npm install –save-dev [package] | yarn add [package] [–dev/-D] |<br>| (N/A) | yarn add [package] [–peer/-P] |<br>| npm install –save-optional [package] | yarn add [package] [–optional/-O]|<br>| npm install –save-exact [package] | yarn add [package] [–exact/-E] |<br>| (N/A) | yarn add [package] [–tilde/-T] |<br>| npm install –global [package] | yarn global add [package] |<br>| npm rebuild | yarn install –force |<br>| npm uninstall [package] | (N/A) |<br>| npm uninstall –save [package] | yarn remove [package] |<br>| npm uninstall –save-dev [package] | yarn remove [package] |<br>| npm uninstall –save-optional [package] | yarn remove [package] |<br>| npm cache clean | yarn cache clean |<br>| rm -rf node_modules &amp;&amp; npm install | yarn upgrade |</p>
+</blockquote>
+</li>
+</ul>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> dcharlie </p>
+      <p class="subtitle"> do sth what u like,f**k the rest.keep moving </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="DrakeLeung"
+  href="https://twitter.com/intent/tweet?text= id="安装"><a href="#安"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'drakeleung';
+  
+  var disqus_url = 'http://yoursite.com/2017/01/11/yarn体验/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>
