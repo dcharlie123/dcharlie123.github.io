@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>前端JS笔记 | dcharlie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">首页</a>
+    
+  
+    
+      <a href="/archives">归档</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2017/02/26/前端JS笔记/">前端JS笔记</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">February 26 2017</p>
+  </section>
+
+  <section class="article-entry">
+    <h2 id="零碎知识点"><a href="#零碎知识点" class="headerlink" title="零碎知识点"></a>零碎知识点</h2><h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">delete</span> x <span class="comment">//true 删除一个不存在的属性，返回true</span></div><div class="line">fadevar=<span class="number">1</span> <span class="comment">//以这种方式创建的变量是全局对象的可配置的属性</span></div><div class="line"><span class="keyword">delete</span> fadevar <span class="comment">//true 变量被删除</span></div><div class="line">fadevar <span class="comment">//报错</span></div><div class="line"><span class="keyword">this</span>.fadevar1=<span class="number">2</span> <span class="comment">//同上</span></div><div class="line"><span class="keyword">var</span> truevar = <span class="number">3</span>; <span class="comment">//var声明一个不可删除的全局变量</span></div><div class="line"><span class="keyword">delete</span> truevar <span class="comment">//false</span></div><div class="line"><span class="keyword">var</span> str=<span class="string">'a'</span>;</div><div class="line"><span class="keyword">delete</span> str.toString<span class="comment">//true 但是不能删除 Tip：不能删除继承的属性</span></div></pre></td></tr></table></figure>
+<h3 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point=&#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">1</span>&#125;;</div><div class="line"><span class="string">'x'</span> <span class="keyword">in</span> point <span class="comment">//true</span></div><div class="line"><span class="string">'z'</span> <span class="keyword">in</span> point <span class="comment">//false</span></div><div class="line"><span class="string">'toString'</span> <span class="keyword">in</span> point<span class="comment">//ture,说明对象继承的属性也可以被in到</span></div><div class="line"><span class="keyword">var</span> data=[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line"><span class="number">7</span> <span class="keyword">in</span> data<span class="comment">//'7' in data 都返回false，是下标</span></div><div class="line"><span class="number">0</span> <span class="keyword">in</span> data<span class="comment">//'0' in data true:data[0]有值</span></div><div class="line"><span class="keyword">var</span> data=[,<span class="number">0</span>,<span class="number">1</span>]<span class="comment">//[undefined × 1, 0, 1]</span></div><div class="line"><span class="number">0</span> <span class="keyword">in</span> data<span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">d <span class="keyword">instanceof</span> <span class="built_in">Date</span>;<span class="comment">//true</span></div><div class="line">d <span class="keyword">instanceof</span> <span class="built_in">Object</span><span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h3 id="for-in-只遍历‘可枚举’的属性"><a href="#for-in-只遍历‘可枚举’的属性" class="headerlink" title="for/in 只遍历‘可枚举’的属性"></a>for/in 只遍历‘可枚举’的属性</h3><h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2>
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> dcharlie </p>
+      <p class="subtitle"> do sth what u like,f**k the rest.keep moving </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="DrakeLeung"
+  href="https://twitter.com/intent/tweet?text= id="零碎知识点"><a href="
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'drakeleung';
+  
+  var disqus_url = 'http://yoursite.com/2017/02/26/前端JS笔记/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>
