@@ -12,7 +12,7 @@ html, body {
   width: 100%; }
 
 html {
-  font-size: 16px; }
+  font-size: 15px; }
 
 body {
   margin: 0;
@@ -289,7 +289,7 @@ main.post {
   border-width: 1px 0;
   overflow: auto;
   color: #ccc;
-  line-height: 20px; }
+  line-height: 18.75px; }
 
 .line-numbers, .article-entry .highlight .gutter pre {
   color: #666;
@@ -356,7 +356,7 @@ main.post {
   padding-right: 20px; }
 
 .article-entry .highlight .line {
-  height: 20px; }
+  height: 18.75px; }
 
 pre .comment,
 pre .title {
