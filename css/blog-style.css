@@ -521,7 +521,8 @@ a:focus {
 }
 
 .post-content-preview p {
-    color: #555;
+    color: #bfbfbf;
+    font-size: 14px;
 }
 
 .section-heading {
