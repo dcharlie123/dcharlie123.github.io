@@ -38,11 +38,11 @@
 <li><a href="http://web.jobbole.com/83274/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">学习BFC</a></li>
 <li><a href="http://web.jobbole.com/84808/" target="_blank" rel="external">什么是BFC</a></li>
 <li><a href="http://web.jobbole.com/85119/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">CSS定位问题（1）：盒模型、浮动、BFC</a></li>
-<li><a href="http://www.html-js.com/article/1866" target="_blank" rel="external">CSS之BFC详解</a><h3 id="什么是BFC"><a href="#什么是BFC" class="headerlink" title="什么是BFC"></a>什么是BFC</h3><blockquote>
+<li><a href="http://www.html-js.com/article/1866" target="_blank" rel="external">CSS之BFC详解</a></li>
+</ul>
+<h3 id="什么是BFC"><a href="#什么是BFC" class="headerlink" title="什么是BFC"></a>什么是BFC</h3><blockquote>
 <p>BFC（W3C CSS 2.1 规范中的一个概念）就是所谓的Block formatting contexts （块级格式化上下文）。创建了 BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时BFC仍然属于文档中的普通流。</p>
 </blockquote>
-</li>
-</ul>
 <h3 id="BFC的特性"><a href="#BFC的特性" class="headerlink" title="BFC的特性"></a>BFC的特性</h3><ul>
 <li>内部的盒会在垂直方向一个接一个排列（可以看作BFC中有一个的常规流）；</li>
 <li>处于同一个BFC中的元素相互影响，可能会发生margin collapse；</li>
@@ -59,10 +59,7 @@
 <li>fieldset元素</li>
 </ul>
 <h3 id="使用BFC有什么用"><a href="#使用BFC有什么用" class="headerlink" title="使用BFC有什么用"></a>使用BFC有什么用</h3><ul>
-<li>解决margin叠加问题<br><a href="http://codepen.io/dcharlie2016/pen/evNgBZ" target="_blank" rel="external">DEMO1</a></li>
-</ul>
-<p>我们给三个div每个div之间的外边距设置20px;但是我们看到上下两个div实际间距20px，发生了外边距重叠。<br>那么我们给第一个div套上父元素并触发BFC</p>
-<ul>
+<li>解决margin叠加问题<br><a href="http://codepen.io/dcharlie2016/pen/evNgBZ" target="_blank" rel="external">DEMO1</a><br><img src="image/margin重叠.png" alt="外边距重叠"><br>我们给三个div每个div之间的外边距设置20px;但是我们看到上下两个div实际间距20px，发生了外边距重叠。<br>那么我们给第一个div套上父元素并触发BFC<br><a href="/path/to/img.jpg" title="Optional title">BFC解决外边距重叠</a></li>
 <li>用于清除浮动，计算BFC高度(利用特性5)<br><a href="http://codepen.io/dcharlie2016/pen/qrdRPV" target="_blank" rel="external">DEMO2</a><br>图一由于.left元素浮动所以父元素高度发生塌陷；使父元素形成BFC，因为特性5使得（计算BFC的高度时，考虑BFC所包含的所有元素，连浮动元素也参与计算），<br>所以高度不塌陷。图3由于.little浮动形成BFC，而.right未形成BFC，所以发生高度塌陷；图4，同图2一样添加.BFC所以形成BFC并因为（特性6）浮动盒区域不叠加到BFC上<br>所以.left和.right不发生重叠，同时注意margin也没重叠，左右上下margin：5px间距10px,因为我们前面说了.little浮动形成BFC。</li>
 <li><h3 id="这里给出两种清除浮动的方法"><a href="#这里给出两种清除浮动的方法" class="headerlink" title="这里给出两种清除浮动的方法"></a>这里给出两种清除浮动的方法</h3><h4 id="方法一（常用的）："><a href="#方法一（常用的）：" class="headerlink" title="方法一（常用的）："></a>方法一（常用的）：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.clearfix::after &#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    display: block;</div><div class="line">    height: 0;</div><div class="line">    overflow:hidden</div><div class="line">    clear: both;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.clearfix &#123;</div><div class="line">    *zoom: 1;/*IE/7/6*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
