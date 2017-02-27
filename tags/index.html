@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        CSS选择器优先级｜dcharlie123&#39;s blog
+        tags｜dcharlie123&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://dcharlie123.github.io/2017/02/27/CSS选择器优先级/">
+    <link rel="canonical" href="http://dcharlie123.github.io/tags/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -123,186 +123,108 @@
 </script>
 
 <!-- Main Content -->
-
-<!--only post-->
-
-
-<img class="wechat-title-img"
-     src="">
-
-
 <style>
-    
-    header.intro-header {
-        background-image: url('')
+    .intro-header .site-heading {
+        margin: 50px;
     }
-
-    
 </style>
 
+<!-- Page Header -->
 <header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <div class="post-heading">
-                    <h1>CSS选择器优先级</h1>
-                    
-                    <span class="meta">
-                         作者 Haojen Ma
-                        <span>
-                          日期 2017-02-27
-                         </span>
-                    </span>
-                    <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#前端CSS笔记"
-                           title="前端CSS笔记">前端CSS笔记</a>
-                        
-                    </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading text-center">
+                    <h1>tags</h1>
+                    <span class="subheading"></span>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="post-title-haojen">
-        <span>
-            CSS选择器优先级
-        </span>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><p>选择器分为4个等级：</p>
-<ul>
-<li>内联样式具有最高的优先级</li>
-<li>ID选择器（例如：#example）</li>
-<li>类选择器（class selectors） (例如：.example)，属性选择器（attributes selectors）（例如：[type=”radio”]），伪类选择器（pseudo-classes）（例如：:hover）</li>
-<li>元素(类型)选择器（type selectors）（例如：h1）和 伪元素选择器（pseudo-elements）（例如：:before）</li>
-</ul>
-<p><strong>注意：</strong>!important 规则例外。当在一个样式声明上使用 !important 规则时，该样式声明会覆盖CSS中任何其他的声明。所以尽量避免使用。</p>
-<h5 id="怎样覆盖-important-用优先级更高的选择器。"><a href="#怎样覆盖-important-用优先级更高的选择器。" class="headerlink" title="怎样覆盖!important? 用优先级更高的选择器。"></a>怎样覆盖!important? 用优先级更高的选择器。</h5><h4 id="优先级的计算（示例）"><a href="#优先级的计算（示例）" class="headerlink" title="优先级的计算（示例）"></a>优先级的计算（示例）</h4><table>
-<thead>
-<tr>
-<th>选择器</th>
-<th style="text-align:left">特殊性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>style=””</td>
-<td style="text-align:left">1,0,0,0</td>
-</tr>
-<tr>
-<td>#wrapper{}</td>
-<td style="text-align:left">0,1,0,0</td>
-</tr>
-<tr>
-<td>.date{}</td>
-<td style="text-align:left">0,0,1,0　</td>
-</tr>
-<tr>
-<td>div{}</td>
-<td style="text-align:left">0,0,0,1</td>
-</tr>
-<tr>
-<td>#wrapper #content{}</td>
-<td style="text-align:left">0,2,0,0</td>
-</tr>
-<tr>
-<td>#content .date{}</td>
-<td style="text-align:left">0,1,1,0</td>
-</tr>
-<tr>
-<td>div#content{}</td>
-<td style="text-align:left">0,1,0,1</td>
-</tr>
-<tr>
-<td>p.date{}</td>
-<td style="text-align:left">0,0,1,1</td>
-</tr>
-<tr>
-<td>div p{}</td>
-<td style="text-align:left">0,0,0,2</td>
-</tr>
-</tbody>
-</table>
-<h5 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h5><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Text<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">div#test span &#123; color: green &#125;</div><div class="line">span &#123; color: red &#125;</div><div class="line">div span &#123; color: blue &#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>“Text”是什么颜色呢？</p>
-</blockquote>
-<p>绿色的，因为第一个优先级（1,0,0,2），第二个优先级（0,0,0,1），第三个优先级（0,0,0,2）,第一个优先级最高</p>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 标签云 -->
+            <div id='tag_cloud' class="tags">
+                
+                <a href="#前端CSS笔记" title="前端CSS笔记" rel="2">前端CSS笔记</a>
+                
+                <a href="#文章" title="文章" rel="1">文章</a>
+                
+                <a href="#随笔" title="随笔" rel="1">随笔</a>
+                
+            </div>
 
+            <!-- 标签列表 -->
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="前端CSS笔记">
+                    <span class="tag-text">前端CSS笔记</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2017/02/27/CSS选择器优先级/">
+                        <h2 class="post-title">
+                            CSS选择器优先级
+                        </h2>
+                        
+                    </a>
+                </div>
                 <hr>
                 
-
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/2017/02/27/BFC文章及归纳/" data-toggle="tooltip" data-placement="top"
-                           title="BFC文章及归纳">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/2017/02/26/前端JS笔记/" data-toggle="tooltip" data-placement="top"
-                           title="前端JS笔记">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-
-                
-
-                
-
-            </div>
-
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#优先级"><span class="toc-text">优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#怎样覆盖-important-用优先级更高的选择器。"><span class="toc-text">怎样覆盖!important? 用优先级更高的选择器。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优先级的计算（示例）"><span class="toc-text">优先级的计算（示例）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DEMO"><span class="toc-text">DEMO</span></a></li></ol></li></ol>
+                <div class="post-preview">
+                    <a href="/2017/02/27/BFC文章及归纳/">
+                        <h2 class="post-title">
+                            BFC文章及归纳
+                        </h2>
+                        
+                    </a>
                 </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Sidebar Container -->
-
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-                <section>
-                    <!-- no hr -->
-                    <h5 class="text-center">
-                        <a href="/tags/">FEATURED TAGS</a>
-                    </h5>
-                    <div class="tags">
-                        
-                        <a class="tag" href="/tags/#前端CSS笔记"
-                           title="前端CSS笔记">前端CSS笔记</a>
-                        
-                    </div>
-                </section>
-                
-
-                <!-- Friends Blog -->
+                <hr>
                 
             </div>
-        </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="文章">
+                    <span class="tag-text">文章</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2016/03/16/文章名字/">
+                        <h2 class="post-title">
+                            文章名字
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="随笔">
+                    <span class="tag-text">随笔</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2016/03/16/文章名字/">
+                        <h2 class="post-title">
+                            文章名字
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
 
+        </div>
     </div>
-</article>
-
-
-
-
-
+</div>
 
 <!-- Footer -->
 <!-- Footer -->
