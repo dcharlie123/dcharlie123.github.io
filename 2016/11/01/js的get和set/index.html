@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="null">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="">
+    <meta name="keyword" content="null">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="dcharlie" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="dcharlie123" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        JavaScript中get和set｜undefined
+        JavaScript中get和set｜dcharlie123&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/11/01/js的get和set/">
+    <link rel="canonical" href="http://haojen.github.io/2016/11/01/js的get和set/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    dcharlie
+                    dcharlie123
                 </span>
                 's Blog
             </a>
@@ -140,7 +140,7 @@
                     <h1>JavaScript中get和set</h1>
                     
                     <span class="meta">
-                         作者 John Doe
+                         作者 Haojen Ma
                         <span>
                           日期 2016-11-01
                          </span>
@@ -165,11 +165,11 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="JavaScript中get和set"><a href="#JavaScript中get和set" class="headerlink" title="JavaScript中get和set"></a>JavaScript中get和set</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo=&#123;</div><div class="line"> get age()&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear()</div><div class="line"> &#125;,</div><div class="line"> set age(a)&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"age的值是"</span>+a)</div><div class="line"> &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(foo.age)<span class="comment">//2016</span></div><div class="line">foo.age=<span class="number">2017</span><span class="comment">//age的值是2017</span></div><div class="line"><span class="built_in">console</span>.log(foo.age)<span class="comment">//2016   还是2016！！！</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="built_in">Object</span>.defineProperty(foo.prototype,<span class="string">'z'</span>,&#123;<span class="attr">get</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">1</span>&#125;&#125;)</div><div class="line"><span class="keyword">var</span> obj=<span class="keyword">new</span> foo();</div><div class="line"><span class="built_in">console</span>.log(obj.z)<span class="comment">//1</span></div><div class="line">obj.z=<span class="number">100</span>;</div><div class="line"><span class="built_in">console</span>.log(obj.z)<span class="comment">//1</span></div></pre></td></tr></table></figure>
-<h6 id="如果要修改，需要用"><a href="#如果要修改，需要用" class="headerlink" title="如果要修改，需要用"></a>如果要修改，需要用</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">'z'</span>,&#123;<span class="attr">value</span>:<span class="number">100</span>,<span class="attr">configerable</span>:<span class="literal">true</span>&#125;)</div><div class="line">obj.z<span class="comment">//100</span></div><div class="line"><span class="keyword">delete</span> obj.z</div><div class="line">obj.z<span class="comment">//1</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o=&#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(o,<span class="string">'x'</span>,&#123;<span class="attr">value</span>:<span class="number">1</span>&#125;);<span class="comment">//默认writable:false,configurable:false</span></div><div class="line"><span class="keyword">var</span> obj=<span class="built_in">Object</span>.create(o);</div><div class="line">obj.x<span class="comment">//1</span></div><div class="line">obj.x=<span class="number">100</span></div><div class="line">obj.x<span class="comment">//1</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o=&#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(o,<span class="string">'x'</span>,&#123;<span class="attr">writable</span>:<span class="literal">true</span>,<span class="attr">configurable</span>:<span class="literal">true</span>,<span class="attr">value</span>:<span class="number">1</span>&#125;);<span class="comment">//默认writable:false,configurable:false</span></div><div class="line"><span class="keyword">var</span> obj=<span class="built_in">Object</span>.create(o);</div><div class="line">obj.x<span class="comment">//1</span></div><div class="line">obj.x=<span class="number">100</span></div><div class="line">obj.x<span class="comment">//100</span></div></pre></td></tr></table></figure>
+                <h1 id="JavaScript中get和set"><a href="#JavaScript中get和set" class="headerlink" title="JavaScript中get和set"></a>JavaScript中get和set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> foo=&#123;</div><div class="line"> get age()&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear()</div><div class="line"> &#125;,</div><div class="line"> set age(a)&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"age的值是"</span>+a)</div><div class="line"> &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(foo.age)<span class="comment">//2016</span></div><div class="line">foo.age=<span class="number">2017</span><span class="comment">//age的值是2017</span></div><div class="line"><span class="built_in">console</span>.log(foo.age)<span class="comment">//2016   还是2016！！！</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="built_in">Object</span>.defineProperty(foo.prototype,<span class="string">'z'</span>,&#123;<span class="attr">get</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">1</span>&#125;&#125;)</div><div class="line"><span class="keyword">var</span> obj=<span class="keyword">new</span> foo();</div><div class="line"><span class="built_in">console</span>.log(obj.z)<span class="comment">//1</span></div><div class="line">obj.z=<span class="number">100</span>;</div><div class="line"><span class="built_in">console</span>.log(obj.z)<span class="comment">//1</span></div></pre></td></tr></table></figure>
+<h6 id="如果要修改，需要用"><a href="#如果要修改，需要用" class="headerlink" title="如果要修改，需要用"></a>如果要修改，需要用</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">'z'</span>,&#123;<span class="attr">value</span>:<span class="number">100</span>,<span class="attr">configerable</span>:<span class="literal">true</span>&#125;)</div><div class="line">obj.z<span class="comment">//100</span></div><div class="line"><span class="keyword">delete</span> obj.z</div><div class="line">obj.z<span class="comment">//1</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> o=&#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(o,<span class="string">'x'</span>,&#123;<span class="attr">value</span>:<span class="number">1</span>&#125;);<span class="comment">//默认writable:false,configurable:false</span></div><div class="line"><span class="keyword">var</span> obj=<span class="built_in">Object</span>.create(o);</div><div class="line">obj.x<span class="comment">//1</span></div><div class="line">obj.x=<span class="number">100</span></div><div class="line">obj.x<span class="comment">//1</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> o=&#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(o,<span class="string">'x'</span>,&#123;<span class="attr">writable</span>:<span class="literal">true</span>,<span class="attr">configurable</span>:<span class="literal">true</span>,<span class="attr">value</span>:<span class="number">1</span>&#125;);<span class="comment">//默认writable:false,configurable:false</span></div><div class="line"><span class="keyword">var</span> obj=<span class="built_in">Object</span>.create(o);</div><div class="line">obj.x<span class="comment">//1</span></div><div class="line">obj.x=<span class="number">100</span></div><div class="line">obj.x<span class="comment">//100</span></div></pre></td></tr></table></figure>
 
                 <hr>
                 
@@ -212,6 +212,16 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
                 
@@ -237,18 +247,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/dcharlie123">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/dch">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/dcharlie123">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; dcharlie 2017
+                    Copyright &copy; dcharlie123 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -285,7 +322,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+        async("http://haojen.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -317,13 +354,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>

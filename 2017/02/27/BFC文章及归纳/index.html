@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="null">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="">
+    <meta name="keyword" content="null">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="dcharlie" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="dcharlie123" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        BFC文章及归纳｜undefined
+        BFC文章及归纳｜dcharlie123&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2017/02/27/BFC文章及归纳/">
+    <link rel="canonical" href="http://haojen.github.io/2017/02/27/BFC文章及归纳/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    dcharlie
+                    dcharlie123
                 </span>
                 's Blog
             </a>
@@ -140,7 +140,7 @@
                     <h1>BFC文章及归纳</h1>
                     
                     <span class="meta">
-                         作者 John Doe
+                         作者 Haojen Ma
                         <span>
                           日期 2017-02-27
                          </span>
@@ -196,8 +196,8 @@
 <li>解决margin叠加问题<br><a href="http://codepen.io/dcharlie2016/pen/evNgBZ" target="_blank" rel="external">DEMO1</a><br>我们给三个div每个div之间的外边距设置20px;但是我们看到上下两个div实际间距20px，发生了外边距重叠。<br>那么我们给第一个div套上父元素并触发BFC</li>
 <li>用于清除浮动，计算BFC高度(利用特性5)<br><a href="http://codepen.io/dcharlie2016/pen/qrdRPV" target="_blank" rel="external">DEMO2</a><br>图一由于.left元素浮动所以父元素高度发生塌陷；使父元素形成BFC，因为特性5使得（计算BFC的高度时，考虑BFC所包含的所有元素，连浮动元素也参与计算），<br>所以高度不塌陷。图3由于.little浮动形成BFC，而.right未形成BFC，所以发生高度塌陷；图4，同图2一样添加.BFC所以形成BFC并因为（特性6）浮动盒区域不叠加到BFC上<br>所以.left和.right不发生重叠，同时注意margin也没重叠，左右上下margin：5px间距10px,因为我们前面说了.little浮动形成BFC。</li>
 </ul>
-<h3 id="这里给出两种清除浮动的方法"><a href="#这里给出两种清除浮动的方法" class="headerlink" title="这里给出两种清除浮动的方法"></a>这里给出两种清除浮动的方法</h3><h4 id="方法一（常用的）："><a href="#方法一（常用的）：" class="headerlink" title="方法一（常用的）："></a>方法一（常用的）：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.clearfix::after &#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    display: block;</div><div class="line">    height: 0;</div><div class="line">    overflow:hidden</div><div class="line">    clear: both;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.clearfix &#123;</div><div class="line">    *zoom: 1;/*IE/7/6*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="方法二（来着张鑫旭老师的课程）："><a href="#方法二（来着张鑫旭老师的课程）：" class="headerlink" title="方法二（来着张鑫旭老师的课程）："></a>方法二（来着张鑫旭老师的课程）：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.clearfix::after&#123;</div><div class="line">    content:&apos;&apos;;</div><div class="line">    display:table;</div><div class="line">    clear:both;</div><div class="line">&#125;</div><div class="line">.clearfix&#123;</div><div class="line">    *zoom:1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="这里给出两种清除浮动的方法"><a href="#这里给出两种清除浮动的方法" class="headerlink" title="这里给出两种清除浮动的方法"></a>这里给出两种清除浮动的方法</h3><h4 id="方法一（常用的）："><a href="#方法一（常用的）：" class="headerlink" title="方法一（常用的）："></a>方法一（常用的）：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.clearfix::after &#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    display: block;</div><div class="line">    height: 0;</div><div class="line">    overflow:hidden</div><div class="line">    clear: both;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.clearfix &#123;</div><div class="line">    *zoom: 1;/*IE/7/6*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="方法二（来着张鑫旭老师的课程）："><a href="#方法二（来着张鑫旭老师的课程）：" class="headerlink" title="方法二（来着张鑫旭老师的课程）："></a>方法二（来着张鑫旭老师的课程）：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.clearfix::after&#123;</div><div class="line">    content:&apos;&apos;;</div><div class="line">    display:table;</div><div class="line">    clear:both;</div><div class="line">&#125;</div><div class="line">.clearfix&#123;</div><div class="line">    *zoom:1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
                 <hr>
                 
@@ -235,6 +235,19 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#前端CSS笔记"
+                           title="前端CSS笔记">前端CSS笔记</a>
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
                 
@@ -260,18 +273,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/dcharlie123">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/dch">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/dcharlie123">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; dcharlie 2017
+                    Copyright &copy; dcharlie123 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -308,7 +348,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+        async("http://haojen.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -340,13 +380,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>
