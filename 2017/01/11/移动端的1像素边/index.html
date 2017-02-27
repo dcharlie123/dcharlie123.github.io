@@ -165,12 +165,8 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>在移动端由于存在设备像素比的概念所以，<code>border-width:1px</code>在移动端不一定是真正的1像素。
-所以我们需要用其他方法实现移动端的1像素边框。
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">.tab&#123;</div><div class="line">    &lt;!--设置目标元素为相对定位--&gt;</div><div class="line">    position:relative;</div><div class="line">&#125;</div><div class="line">@media(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5)&#123;</div><div class="line">    &lt;!--设置伪类元素--&gt;</div><div class="line">    .tab::after&#123;</div><div class="line">        content:&apos;&apos;;</div><div class="line">        &lt;!--绝对定位--&gt;</div><div class="line">        position:absolute;</div><div class="line">        bottom:0;</div><div class="line">        left:0;</div><div class="line">        &lt;!--与父级等宽--&gt;</div><div class="line">        width:100%;</div><div class="line">        &lt;!--给伪元素添上1px的边框--&gt;</div><div class="line">        border-top: 1px solid rgba(7,17,27,.1);</div><div class="line">        &lt;!--缩小0.5倍（变回目标元素的大小）--&gt;</div><div class="line">        transform: scaleY(0.5);</div><div class="line">        &lt;!--把border包进来--&gt;</div><div class="line">        box-sizing: border-box;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>顺便记一下移动端调试的一种方法,
-webpack-server服务下
-windows下在命令行输入<code>ipconfig</code>,可以看到ip地址，找<strong>IPv4 地址</strong>,确保电脑和手机链接同一wifi,在手机浏览器地址栏把PC端的localhost换成ip地址+端口号</p>
+                <p>在移动端由于存在设备像素比的概念所以，<code>border-width:1px</code>在移动端不一定是真正的1像素。<br>所以我们需要用其他方法实现移动端的1像素边框。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">.tab&#123;</div><div class="line">    &lt;!--设置目标元素为相对定位--&gt;</div><div class="line">    position:relative;</div><div class="line">&#125;</div><div class="line">@media(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5)&#123;</div><div class="line">    &lt;!--设置伪类元素--&gt;</div><div class="line">    .tab::after&#123;</div><div class="line">        content:&apos;&apos;;</div><div class="line">        &lt;!--绝对定位--&gt;</div><div class="line">        position:absolute;</div><div class="line">        bottom:0;</div><div class="line">        left:0;</div><div class="line">        &lt;!--与父级等宽--&gt;</div><div class="line">        width:100%;</div><div class="line">        &lt;!--给伪元素添上1px的边框--&gt;</div><div class="line">        border-top: 1px solid rgba(7,17,27,.1);</div><div class="line">        &lt;!--缩小0.5倍（变回目标元素的大小）--&gt;</div><div class="line">        transform: scaleY(0.5);</div><div class="line">        &lt;!--把border包进来--&gt;</div><div class="line">        box-sizing: border-box;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>顺便记一下移动端调试的一种方法,<br>webpack-server服务下<br>windows下在命令行输入<code>ipconfig</code>,可以看到ip地址，找<strong>IPv4 地址</strong>,确保电脑和手机链接同一wifi,在手机浏览器地址栏把PC端的localhost换成ip地址+端口号</p>
 
                 <hr>
                 
@@ -178,14 +174,14 @@ windows下在命令行输入<code>ipconfig</code>,可以看到ip地址，找<str
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2017/01/11/yarn体验/" data-toggle="tooltip" data-placement="top"
-                           title="yarn体验">&larr; Previous Post</a>
+                        <a href="/2017/02/26/前端JS笔记/" data-toggle="tooltip" data-placement="top"
+                           title="前端JS笔记">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2017/01/02/回归基础-MDN_javascript复习(1)/" data-toggle="tooltip" data-placement="top"
-                           title="回归基础-MDN_javascript复习(1)">Next Post &rarr;</a>
+                        <a href="/2017/01/11/yarn体验/" data-toggle="tooltip" data-placement="top"
+                           title="yarn体验">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
