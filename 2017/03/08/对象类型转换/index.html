@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Hello World｜dcharlie123&#39;s blog
+        对象类型转换｜dcharlie123&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://dcharlie123.github.io/2016/12/20/hello-world/">
+    <link rel="canonical" href="http://dcharlie123.github.io/2017/03/08/对象类型转换/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -145,15 +145,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Hello World</h1>
+                    <h1>对象类型转换</h1>
                     
                     <span class="meta">
                          作者 dcharlie123
                         <span>
-                          日期 2016-12-20
+                          日期 2017-03-08
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#前端js笔记"
+                           title="前端js笔记">前端js笔记</a>
                         
                     </div>
                 </div>
@@ -162,7 +165,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Hello World
+            对象类型转换
         </span>
     </div>
 </header>
@@ -173,35 +176,80 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2>Quick Start</h2>
-<h3>Create a new post</h3>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure></p>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3>Run server</h3>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3>Generate static files</h3>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure></p>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3>Deploy to remote sites</h3>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+                <h2>原始类型</h2>
+<ul>
+<li>Boolean</li>
+<li>Number</li>
+<li>String</li>
+<li>Undefined</li>
+<li>Null</li>
+</ul>
+<h2>对象转Boolean</h2>
+<h3>什么时候会进行布尔转换呢：</h3>
+<ul>
+<li>布尔比较时</li>
+<li>if(obj) , while(obj) 等判断时
+对象转布尔值是最简单的。除了以下几个：</li>
+<li>0或+0</li>
+<li>undefined</li>
+<li>''</li>
+<li>-0</li>
+<li>NaN</li>
+<li>null
+这些会被转换成false，其他的都是true。</li>
+</ul>
+<h2>对象转Number</h2>
+<p>先看转化规则：</p>
+<blockquote>
+<ul>
+<li>如果 valueOf 方法存在并且返回原始类型，返回 valueOf 的结果。</li>
+<li>如果 valueOf 方法不存在或者返回的不是原始类型，调用 toString 方法，如果 toString 方法存在，并且返回原始类型数据，返回 toString 的结果。</li>
+<li>其他情况，抛出错误。</li>
+</ul>
+</blockquote>
+<h2>对象转String</h2>
+<p>转换规则：</p>
+<blockquote>
+<ul>
+<li>如果 toString 方法存在并且返回原始类型，返回 toString 的结果。</li>
+<li>如果 toString 方法不存在或者返回的不是原始类型，调用 valueOf 方法，如果 valueOf 方法存在，并且返回原始类型数据，返回 valueOf 的结果。</li>
+<li>其他情况，抛出错误。
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;<span class="string">"i"</span>:<span class="number">1</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(a+<span class="number">1</span>);<span class="comment">//[object Object]1</span></div></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<h2>函数转换</h2>
+<p>先看例子：
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>返回什么？
+不是<code>2</code>是<code>function f(){return 1;}1</code>,因为function是发生了toString转换，<strong>加法运算符的规则：如果有一个是String类型，那么另外一个会转成String，如果拼接</strong>
+我们修改toSting方法来验证：
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>输出结果是多少？
+答案是<strong>3</strong>,可见调用了toString。
+其实。。。再看：
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">f.valueOf = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>当我们没有重新定义toString与valueOf时，函数的隐式转换会调用默认的toString方法，它会将函数的定义内容作为字符串返回。而当我们主动定toString/vauleOf方法时，那么隐式转换的返回结果则由我们自己控制了。其中valueOf的优先级会toString高一点。
+再来个差不多的例子：
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'进入add'</span>);</div><div class="line">    <span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'调用fn'</span>);</div><div class="line">    &#125;</div><div class="line"> 	fn.toString=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"调用toString"</span>)</div><div class="line">	&#125; </div><div class="line">    fn.valueOf = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'调用valueOf'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fn;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* </span></div><div class="line"> *  进入add</div><div class="line"> *  调用valueOf</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>接下来两篇文章了解柯里化
+<a href="http://www.jianshu.com/p/5e1899fe7d6b" target="_blank" rel="external">前端基础进阶（八）：深入详解函数的柯里化</a>
+<a href="http://www.jianshu.com/p/5e1899fe7d6b" target="_blank" rel="external">一道面试题引发的对javascript类型转换的思考</a></p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2016/12/20/Jekyll博客搭建踩坑记/" data-toggle="tooltip" data-placement="top"
-                           title="Jekyll博客搭建踩坑记">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2016/11/01/js的get和set/" data-toggle="tooltip" data-placement="top"
-                           title="JavaScript中get和set">Next Post &rarr;</a>
+                        <a href="/2017/03/02/前端面试题/" data-toggle="tooltip" data-placement="top"
+                           title="前端面试题">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -214,7 +262,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">原始类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">对象转Boolean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">什么时候会进行布尔转换呢：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">对象转Number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">对象转String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">函数转换</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -235,6 +283,9 @@
                         <a href="/tags/">FEATURED TAGS</a>
                     </h5>
                     <div class="tags">
+                        
+                        <a class="tag" href="/tags/#前端js笔记"
+                           title="前端js笔记">前端js笔记</a>
                         
                     </div>
                 </section>
