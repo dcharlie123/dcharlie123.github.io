@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/tags/">文章分类</a>
+                            <a href="/my-works/">我的作品集</a>
                         </li>
 							
 						
@@ -88,7 +88,7 @@
                         
 							
                         <li>
-                            <a href="/my-works/">my works</a>
+                            <a href="/tags/">文章分类</a>
                         </li>
 							
 						
@@ -184,15 +184,18 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><p>选择器分为4个等级：</p>
+                <h4>优先级</h4>
+<p>选择器分为4个等级：</p>
 <ul>
 <li>内联样式具有最高的优先级</li>
 <li>ID选择器（例如：#example）</li>
-<li>类选择器（class selectors） (例如：.example)，属性选择器（attributes selectors）（例如：[type=”radio”]），伪类选择器（pseudo-classes）（例如：:hover）</li>
+<li>类选择器（class selectors） (例如：.example)，属性选择器（attributes selectors）（例如：[type=&quot;radio&quot;]），伪类选择器（pseudo-classes）（例如：:hover）</li>
 <li>元素(类型)选择器（type selectors）（例如：h1）和 伪元素选择器（pseudo-elements）（例如：:before）</li>
 </ul>
 <p><strong>注意：</strong>!important 规则例外。当在一个样式声明上使用 !important 规则时，该样式声明会覆盖CSS中任何其他的声明。所以尽量避免使用。</p>
-<h5 id="怎样覆盖-important-用优先级更高的选择器。"><a href="#怎样覆盖-important-用优先级更高的选择器。" class="headerlink" title="怎样覆盖!important? 用优先级更高的选择器。"></a>怎样覆盖!important? 用优先级更高的选择器。</h5><h4 id="优先级的计算（示例）"><a href="#优先级的计算（示例）" class="headerlink" title="优先级的计算（示例）"></a>优先级的计算（示例）</h4><table>
+<h5>怎样覆盖!important? 用优先级更高的选择器。</h5>
+<h4>优先级的计算（示例）</h4>
+<table>
 <thead>
 <tr>
 <th>选择器</th>
@@ -201,7 +204,7 @@
 </thead>
 <tbody>
 <tr>
-<td>style=””</td>
+<td>style=&quot;&quot;</td>
 <td style="text-align:left">1,0,0,0</td>
 </tr>
 <tr>
@@ -210,7 +213,7 @@
 </tr>
 <tr>
 <td>.date{}</td>
-<td style="text-align:left">0,0,1,0　</td>
+<td style="text-align:left">0,0,1,0</td>
 </tr>
 <tr>
 <td>div{}</td>
@@ -238,7 +241,8 @@
 </tr>
 </tbody>
 </table>
-<h5 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h5><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Text<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">div#test span &#123; color: green &#125;</div><div class="line">span &#123; color: red &#125;</div><div class="line">div span &#123; color: blue &#125;</div></pre></td></tr></table></figure>
+<h5>DEMO</h5>
+<p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Text<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">div#test span &#123; color: green &#125;</div><div class="line">span &#123; color: red &#125;</div><div class="line">div span &#123; color: blue &#125;</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>“Text”是什么颜色呢？</p>
 </blockquote>
@@ -270,7 +274,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#优先级"><span class="toc-text">优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#怎样覆盖-important-用优先级更高的选择器。"><span class="toc-text">怎样覆盖!important? 用优先级更高的选择器。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优先级的计算（示例）"><span class="toc-text">优先级的计算（示例）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DEMO"><span class="toc-text">DEMO</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">怎样覆盖!important? 用优先级更高的选择器。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">优先级的计算（示例）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">DEMO</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
