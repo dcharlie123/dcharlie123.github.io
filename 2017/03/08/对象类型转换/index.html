@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/my-works/">我的作品集</a>
+                            <a href="/tags/">文章分类</a>
                         </li>
 							
 						
@@ -88,7 +88,7 @@
                         
 							
                         <li>
-                            <a href="/tags/">文章分类</a>
+                            <a href="/my-works/">我的作品集</a>
                         </li>
 							
 						
@@ -184,30 +184,24 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2>原始类型</h2>
-<ul>
+                <h2 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h2><ul>
 <li>Boolean</li>
 <li>Number</li>
 <li>String</li>
 <li>Undefined</li>
 <li>Null</li>
 </ul>
-<h2>对象转Boolean</h2>
-<h3>什么时候会进行布尔转换呢：</h3>
-<ul>
+<h2 id="对象转Boolean"><a href="#对象转Boolean" class="headerlink" title="对象转Boolean"></a>对象转Boolean</h2><h3 id="什么时候会进行布尔转换呢："><a href="#什么时候会进行布尔转换呢：" class="headerlink" title="什么时候会进行布尔转换呢："></a>什么时候会进行布尔转换呢：</h3><ul>
 <li>布尔比较时</li>
-<li>if(obj) , while(obj) 等判断时
-对象转布尔值是最简单的。除了以下几个：</li>
+<li>if(obj) , while(obj) 等判断时<br>对象转布尔值是最简单的。除了以下几个：</li>
 <li>0或+0</li>
 <li>undefined</li>
-<li>''</li>
+<li>‘’</li>
 <li>-0</li>
 <li>NaN</li>
-<li>null
-这些会被转换成false，其他的都是true。</li>
+<li>null<br>这些会被转换成false，其他的都是true。</li>
 </ul>
-<h2>对象转Number</h2>
-<p>先看转化规则：</p>
+<h2 id="对象转Number"><a href="#对象转Number" class="headerlink" title="对象转Number"></a>对象转Number</h2><p>先看转化规则：</p>
 <blockquote>
 <ul>
 <li>如果 valueOf 方法存在并且返回原始类型，返回 valueOf 的结果。</li>
@@ -215,42 +209,26 @@
 <li>其他情况，抛出错误。</li>
 </ul>
 </blockquote>
-<h2>对象转String</h2>
-<p>转换规则：</p>
+<h2 id="对象转String"><a href="#对象转String" class="headerlink" title="对象转String"></a>对象转String</h2><p>转换规则：</p>
 <blockquote>
 <ul>
 <li>如果 toString 方法存在并且返回原始类型，返回 toString 的结果。</li>
 <li>如果 toString 方法不存在或者返回的不是原始类型，调用 valueOf 方法，如果 valueOf 方法存在，并且返回原始类型数据，返回 valueOf 的结果。</li>
-<li>其他情况，抛出错误。
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;<span class="string">"i"</span>:<span class="number">1</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(a+<span class="number">1</span>);<span class="comment">//[object Object]1</span></div></pre></td></tr></table></figure></li>
+<li>其他情况，抛出错误。<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;<span class="string">"i"</span>:<span class="number">1</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(a+<span class="number">1</span>);<span class="comment">//[object Object]1</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
 </blockquote>
-<h2>函数转换</h2>
-<p>先看例子：
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="函数转换"><a href="#函数转换" class="headerlink" title="函数转换"></a>函数转换</h2><p>先看例子：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>返回什么？
-不是<code>2</code>是<code>function f(){return 1;}1</code>,因为function是发生了toString转换，<strong>加法运算符的规则：如果有一个是String类型，那么另外一个会转成String，如果拼接</strong>
-我们修改toSting方法来验证：
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>输出结果是多少？
-答案是<strong>3</strong>,可见调用了toString。
-其实。。。再看：
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">f.valueOf = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>当我们没有重新定义toString与valueOf时，函数的隐式转换会调用默认的toString方法，它会将函数的定义内容作为字符串返回。而当我们主动定toString/vauleOf方法时，那么隐式转换的返回结果则由我们自己控制了。其中valueOf的优先级会toString高一点。
-再来个差不多的例子：
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'进入add'</span>);</div><div class="line">    <span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'调用fn'</span>);</div><div class="line">    &#125;</div><div class="line"> 	fn.toString=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"调用toString"</span>)</div><div class="line">	&#125; </div><div class="line">    fn.valueOf = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'调用valueOf'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fn;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* </span></div><div class="line"> *  进入add</div><div class="line"> *  调用valueOf</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<p>返回什么？<br>不是<code>2</code>是<code>function f(){return 1;}1</code>,因为function是发生了toString转换，<strong>加法运算符的规则：如果有一个是String类型，那么另外一个会转成String，如果拼接</strong><br>我们修改toSting方法来验证：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<p>输出结果是多少？<br>答案是<strong>3</strong>,可见调用了toString。<br>其实。。。再看：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">f.valueOf = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(f + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<p>当我们没有重新定义toString与valueOf时，函数的隐式转换会调用默认的toString方法，它会将函数的定义内容作为字符串返回。而当我们主动定toString/vauleOf方法时，那么隐式转换的返回结果则由我们自己控制了。其中valueOf的优先级会toString高一点。<br>再来个差不多的例子：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'进入add'</span>);</div><div class="line">    <span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'调用fn'</span>);</div><div class="line">    &#125;</div><div class="line"> 	fn.toString=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"调用toString"</span>)</div><div class="line">	&#125; </div><div class="line">    fn.valueOf = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'调用valueOf'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fn;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* </span></div><div class="line"> *  进入add</div><div class="line"> *  调用valueOf</div><div class="line"> */</div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>接下来两篇文章了解柯里化</p>
 <ul>
 <li><a href="http://www.jianshu.com/p/5e1899fe7d6b" target="_blank" rel="external">前端基础进阶（八）：深入详解函数的柯里化</a></li>
-<li><a href="http://www.jianshu.com/p/5e1899fe7d6b" target="_blank" rel="external">一道面试题引发的对javascript类型转换的思考</a>
-隐式转换</li>
-<li><a href="https://github.com/jawil/blog/issues/5" target="_blank" rel="external">从++[[]][+[]]+[+[]]==10?深入浅出弱类型JS的隐式转换</a></li>
+<li><a href="http://www.jianshu.com/p/5e1899fe7d6b" target="_blank" rel="external">一道面试题引发的对javascript类型转换的思考</a><br>隐式转换</li>
+<li>[从++[[]][+[]]+<a href="https://github.com/jawil/blog/issues/5" target="_blank" rel="external">+[]]==10?深入浅出弱类型JS的隐式转换</a></li>
 </ul>
 
                 <hr>
@@ -274,7 +252,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">原始类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">对象转Boolean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">什么时候会进行布尔转换呢：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">对象转Number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">对象转String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">函数转换</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原始类型"><span class="toc-text">原始类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象转Boolean"><span class="toc-text">对象转Boolean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么时候会进行布尔转换呢："><span class="toc-text">什么时候会进行布尔转换呢：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象转Number"><span class="toc-text">对象转Number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象转String"><span class="toc-text">对象转String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数转换"><span class="toc-text">函数转换</span></a></li></ol>
                 </div>
             </div>
         </div>
