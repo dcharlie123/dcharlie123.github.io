@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://dcharlie123.github.io/tags/前端js笔记/">
+    <link rel="canonical" href="http://dcharlie123.github.io/tags/前端JS笔记/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -161,105 +161,18 @@
 
 <div class="post-preview "
      style="background-image: url('')">
-    <a href="/2017/03/08/对象类型转换/">
+    <a href="/2017/03/09/图解JS/">
         <h2 class="post-title">
-            对象类型转换
+            图解JS
         </h2>
         <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2017-03-08
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2017-03-09
         </p>
         
         <div class="post-content-preview">
             <p>
-                原始类型
-Boolean
-Number
-String
-Undefined
-Null
+                
 
-对象转Boolean什么时候会进行布尔转换呢：
-布尔比较时
-if(obj) , while(obj) 等判断时对象转布尔值是最简单的。除了以下几个：
-0或+0
-undefined
-‘’
--0
-NaN
-null这..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2017/02/26/前端JS笔记/">
-        <h2 class="post-title">
-            前端JS笔记
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2017-02-26
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                一、零碎知识点①deletedelete x //true 删除一个不存在的属性，返回truefadevar=1 //以这种方式创建的变量是全局对象的可配置的属性delete fadevar //true 变量被删除fadevar //报错this.fadevar1=2 //同上var true..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/10/16/cookie总结/">
-        <h2 class="post-title">
-            前端学习——cookie总结
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-10-16
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                test前端学习——cookie总结cookie : 存储数据，当用户访问了某个网站（网页）的时候，我们就可以通过cookie来像访问者电脑上存储数据1. 不同的浏览器存放的cookie位置不一样，也是不能通用的
-2. cookie的存储是以域名形式进行区分的
-3. cookie的数据可以设置名..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/10/16/Ajax/">
-        <h2 class="post-title">
-            Ajax
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-10-16
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                ##Ajax
-一、js原生Ajax1.创建IE7及其以上版本用var oAjax=new XMLHttpRequest();IE6用var oAjax=new ActiveXObject(&#39;Microsoft.XMLHTTP&#39;);
-2.连接和发送oAjax.open(type,u..
             </p>
         </div>
     </a>
@@ -364,6 +277,8 @@ null这..
                     
                     
                     
+                    
+                    
                 </div>
             </section>
             
@@ -426,6 +341,95 @@ null这..
                     Copyright &copy; dcharlie123 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://dcharlie123.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    var _baId = '10264513';
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + _baId;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','null','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://om10n1h33.bkt.clouddn.com/avatar.png">
+</body>
+
+</html>
+/span> Times</span>
                     <br>
                     Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
                 </p>
