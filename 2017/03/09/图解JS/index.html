@@ -184,16 +184,12 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p><img src="%E5%9B%BE1.png" alt="图"></p>
-<h3>变量对象创建</h3>
-<p><img src="%E5%8F%98%E9%87%8F.png" alt="变量对象创建"></p>
+                <p><img src="图1.png" alt="图"></p>
+<h3 id="变量对象创建"><a href="#变量对象创建" class="headerlink" title="变量对象创建"></a>变量对象创建</h3><p><img src="变量.png" alt="变量对象创建"></p>
 <blockquote>
-<p>function声明比var声明优先级高一点
-看例子来理解：
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(foo);</div><div class="line">    <span class="built_in">console</span>.log(bar);</div><div class="line">    <span class="keyword">var</span> foo=<span class="string">'Hello'</span>;</div><div class="line">    <span class="built_in">console</span>.log(foo);</div><div class="line">    <span class="keyword">var</span> bar=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'world'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">test();</div></pre></td></tr></table></figure></p>
+<p>function声明比var声明优先级高一点<br>看例子来理解：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(foo);</div><div class="line">    <span class="built_in">console</span>.log(bar);</div><div class="line">    <span class="keyword">var</span> foo=<span class="string">'Hello'</span>;</div><div class="line">    <span class="built_in">console</span>.log(foo);</div><div class="line">    <span class="keyword">var</span> bar=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'world'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">test();</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p>其实这段代码=&gt;
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> bar;</div><div class="line">    <span class="built_in">console</span>.log(foo);<span class="comment">//function foo()&#123;return 2;&#125;</span></div><div class="line">    <span class="built_in">console</span>.log(bar);<span class="comment">//undefined</span></div><div class="line">    <span class="keyword">var</span> foo;</div><div class="line">    foo=<span class="string">'Hello'</span><span class="comment">//覆盖foo函数</span></div><div class="line">    <span class="built_in">console</span>.log(foo);<span class="comment">//Hello</span></div><div class="line">    bar=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'world'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其实这段代码=&gt;<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> bar;</div><div class="line">    <span class="built_in">console</span>.log(foo);<span class="comment">//function foo()&#123;return 2;&#125;</span></div><div class="line">    <span class="built_in">console</span>.log(bar);<span class="comment">//undefined</span></div><div class="line">    <span class="keyword">var</span> foo;</div><div class="line">    foo=<span class="string">'Hello'</span><span class="comment">//覆盖foo函数</span></div><div class="line">    <span class="built_in">console</span>.log(foo);<span class="comment">//Hello</span></div><div class="line">    bar=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'world'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -226,7 +222,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">变量对象创建</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量对象创建"><span class="toc-text">变量对象创建</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -267,7 +263,7 @@
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     // dynamic User by Hux
-    var _user = 'CH浩';
+    var _user = 'dcharlie123';
 
     // duoshuo comment query.
     var duoshuoQuery = {short_name: _user};
@@ -281,19 +277,6 @@
         || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"dcharlie123"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
 <!-- 多说公共JS代码 end -->
 
 

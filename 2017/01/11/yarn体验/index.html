@@ -181,12 +181,8 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2>安装</h2>
-<p>如果已经安装了npm,可以用<code>npm install yarn -g</code>全局安装,也可以上官网<a href="https://yarnpkg.com/" target="_blank" rel="external">yarn</a>参考其他安装方法。
-<code>yarn -version</code>或者<code>yarn -V</code>参考yarn版本</p>
-<h2>使用</h2>
-<h3>项目下初始化</h3>
-<p>其实跟npm一样, 在项目文件夹下运行命令行,输入<code>yarn init</code>,接下来就跟<code>npm init</code>一样,询问你</p>
+                <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果已经安装了npm,可以用<code>npm install yarn -g</code>全局安装,也可以上官网<a href="https://yarnpkg.com/" target="_blank" rel="external">yarn</a>参考其他安装方法。<br><code>yarn -version</code>或者<code>yarn -V</code>参考yarn版本</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="项目下初始化"><a href="#项目下初始化" class="headerlink" title="项目下初始化"></a>项目下初始化</h3><p>其实跟npm一样, 在项目文件夹下运行命令行,输入<code>yarn init</code>,接下来就跟<code>npm init</code>一样,询问你</p>
 <ul>
 <li>name : 项目名</li>
 <li>version : 版本号</li>
@@ -197,34 +193,14 @@
 <li>license : 协议</li>
 </ul>
 <p>然后会自动生成package.json文件</p>
-<h3>添加包</h3>
-<p>通过命令行<code>yarn add [package]</code>安装需要的包,会自动添加到package.json中,还可以通过<code>yarn add [package]@[version]</code>带版本号安装
-用<code>yarn upgrade [package]</code>更新包,同样的<code>yarn upgrade [package]@[version]</code>更新到某一版本
-<code>yarn add [package] --dev</code>
-<em>yarn有一个功能————离线安装包依赖</em>
-命令:<code>yarn add [package] --offline</code></p>
-<h3>安装依赖</h3>
-<p>跟<code>npm install</code>类似的命令<code>yarn install</code>,yarn也可以直接用<code>yarn</code>就安装</p>
-<h3>删除包</h3>
-<p><code>yarn remove [package]</code>删除包命令</p>
-<h3>其他命令</h3>
-<p><code>yarn cache ls</code>在本地缓存中的包
-<code>yarn cache dir</code>缓存所在路径
-<code>yarn cache clean</code>清除本地缓存
-<code>yarn config list</code>列出config
-<code>yarn config set registry registry.npm.taobao.org</code>换淘宝镜像
-<code>yarn info [package]</code>查看包信息,本地或线上都可以
-<code>yarn global</code>全局
-<code>yarn self-update</code>更新yarn
-<code>yarn why [package]</code>分析为什么要安装这个包
-<code>yarn run</code>类似npm run
-<code>yarn link</code>发布包</p>
+<h3 id="添加包"><a href="#添加包" class="headerlink" title="添加包"></a>添加包</h3><p>通过命令行<code>yarn add [package]</code>安装需要的包,会自动添加到package.json中,还可以通过<code>yarn add [package]@[version]</code>带版本号安装<br>用<code>yarn upgrade [package]</code>更新包,同样的<code>yarn upgrade [package]@[version]</code>更新到某一版本<br><code>yarn add [package] --dev</code><br><em>yarn有一个功能————离线安装包依赖</em><br>命令:<code>yarn add [package] --offline</code></p>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>跟<code>npm install</code>类似的命令<code>yarn install</code>,yarn也可以直接用<code>yarn</code>就安装</p>
+<h3 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h3><p><code>yarn remove [package]</code>删除包命令</p>
+<h3 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h3><p><code>yarn cache ls</code>在本地缓存中的包<br><code>yarn cache dir</code>缓存所在路径<br><code>yarn cache clean</code>清除本地缓存<br><code>yarn config list</code>列出config<br><code>yarn config set registry registry.npm.taobao.org</code>换淘宝镜像<br><code>yarn info [package]</code>查看包信息,本地或线上都可以<br><code>yarn global</code>全局<br><code>yarn self-update</code>更新yarn<br><code>yarn why [package]</code>分析为什么要安装这个包<br><code>yarn run</code>类似npm run<br><code>yarn link</code>发布包</p>
 <blockquote>
-<p>yarn管理器有一个很重要的文件需要注意，就是yarn.lock，这个是用来依赖的正确性，快速可靠安装的；是执行cli的时候自动生成的，在项目的根目录下，需要保留！！！！不要编辑它，这是自动生成的
-在其他电脑初始化，必须记得把package.json和yarn.lock复制过去</p>
+<p>yarn管理器有一个很重要的文件需要注意，就是yarn.lock，这个是用来依赖的正确性，快速可靠安装的；是执行cli的时候自动生成的，在项目的根目录下，需要保留！！！！不要编辑它，这是自动生成的<br>在其他电脑初始化，必须记得把package.json和yarn.lock复制过去</p>
 </blockquote>
-<h3>官网npm和yarn的对比</h3>
-<table>
+<h3 id="官网npm和yarn的对比"><a href="#官网npm和yarn的对比" class="headerlink" title="官网npm和yarn的对比"></a>官网npm和yarn的对比</h3><table>
 <thead>
 <tr>
 <th>npm</th>
@@ -238,70 +214,70 @@
 </tr>
 <tr>
 <td>(N/A)</td>
-<td style="text-align:left">yarn install --flat</td>
+<td style="text-align:left">yarn install –flat</td>
 </tr>
 <tr>
 <td>(N/A)</td>
-<td style="text-align:left">yarn install --har</td>
+<td style="text-align:left">yarn install –har</td>
 </tr>
 <tr>
 <td>(N/A)</td>
-<td style="text-align:left">yarn install --no-lockfile</td>
+<td style="text-align:left">yarn install –no-lockfile</td>
 </tr>
 <tr>
 <td>(N/A)</td>
-<td style="text-align:left">yarn install --pure-lockfile</td>
+<td style="text-align:left">yarn install –pure-lockfile</td>
 </tr>
 <tr>
 <td>npm install [package]</td>
 <td style="text-align:left">(N/A)</td>
 </tr>
 <tr>
-<td>npm install --save [package]</td>
+<td>npm install –save [package]</td>
 <td style="text-align:left">yarn add [package]</td>
 </tr>
 <tr>
-<td>npm install --save-dev [package]</td>
-<td style="text-align:left">yarn add [package] [--dev/-D]</td>
+<td>npm install –save-dev [package]</td>
+<td style="text-align:left">yarn add [package] [–dev/-D]</td>
 </tr>
 <tr>
 <td>(N/A)</td>
-<td style="text-align:left">yarn add [package] [--peer/-P]</td>
+<td style="text-align:left">yarn add [package] [–peer/-P]</td>
 </tr>
 <tr>
-<td>npm install --save-optional [package]</td>
-<td style="text-align:left">yarn add [package] [--optional/-O]</td>
+<td>npm install –save-optional [package]</td>
+<td style="text-align:left">yarn add [package] [–optional/-O]</td>
 </tr>
 <tr>
-<td>npm install --save-exact [package]</td>
-<td style="text-align:left">yarn add [package] [--exact/-E]</td>
+<td>npm install –save-exact [package]</td>
+<td style="text-align:left">yarn add [package] [–exact/-E]</td>
 </tr>
 <tr>
 <td>(N/A)</td>
-<td style="text-align:left">yarn add [package] [--tilde/-T]</td>
+<td style="text-align:left">yarn add [package] [–tilde/-T]</td>
 </tr>
 <tr>
-<td>npm install --global [package]</td>
+<td>npm install –global [package]</td>
 <td style="text-align:left">yarn global add [package]</td>
 </tr>
 <tr>
 <td>npm rebuild</td>
-<td style="text-align:left">yarn install --force</td>
+<td style="text-align:left">yarn install –force</td>
 </tr>
 <tr>
 <td>npm uninstall [package]</td>
 <td style="text-align:left">(N/A)</td>
 </tr>
 <tr>
-<td>npm uninstall --save [package]</td>
+<td>npm uninstall –save [package]</td>
 <td style="text-align:left">yarn remove [package]</td>
 </tr>
 <tr>
-<td>npm uninstall --save-dev [package]</td>
+<td>npm uninstall –save-dev [package]</td>
 <td style="text-align:left">yarn remove [package]</td>
 </tr>
 <tr>
-<td>npm uninstall --save-optional [package]</td>
+<td>npm uninstall –save-optional [package]</td>
 <td style="text-align:left">yarn remove [package]</td>
 </tr>
 <tr>
@@ -351,7 +327,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">项目下初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">添加包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">删除包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">其他命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">官网npm和yarn的对比</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#项目下初始化"><span class="toc-text">项目下初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加包"><span class="toc-text">添加包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装依赖"><span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除包"><span class="toc-text">删除包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他命令"><span class="toc-text">其他命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#官网npm和yarn的对比"><span class="toc-text">官网npm和yarn的对比</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -389,7 +365,7 @@
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     // dynamic User by Hux
-    var _user = 'CH浩';
+    var _user = 'dcharlie123';
 
     // duoshuo comment query.
     var duoshuoQuery = {short_name: _user};
@@ -403,19 +379,6 @@
         || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"dcharlie123"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
 <!-- 多说公共JS代码 end -->
 
 

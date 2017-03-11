@@ -184,18 +184,10 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2>JS部分</h2>
-<blockquote>
-<p>eval直接在函数内部使用则返回的是局部变量
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="built_in">eval</span>(str);</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">say(<span class="string">"var a=1"</span>)<span class="comment">//1</span></div><div class="line">a<span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>利用window.eval（）使其成为全局的
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="built_in">window</span>.eval(str);</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">say(<span class="string">"var a=1"</span>)<span class="comment">//1</span></div><div class="line">a<span class="comment">//1</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>该函数是立即执行函数，a是var变量声明，所以是局部变量，但是这里的b其实是全局变量；
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a=b=<span class="number">5</span></div><div class="line">&#125;)()</div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">//5</span></div></pre></td></tr></table></figure></p>
+                <h2 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h2><blockquote>
+<p>eval直接在函数内部使用则返回的是局部变量<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="built_in">eval</span>(str);</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">say(<span class="string">"var a=1"</span>)<span class="comment">//1</span></div><div class="line">a<span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
+<p>利用window.eval（）使其成为全局的<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="built_in">window</span>.eval(str);</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">say(<span class="string">"var a=1"</span>)<span class="comment">//1</span></div><div class="line">a<span class="comment">//1</span></div></pre></td></tr></table></figure></p>
+<p>该函数是立即执行函数，a是var变量声明，所以是局部变量，但是这里的b其实是全局变量；<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a=b=<span class="number">5</span></div><div class="line">&#125;)()</div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">//5</span></div></pre></td></tr></table></figure></p>
 </blockquote>
 
                 <hr>
@@ -234,7 +226,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">JS部分</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS部分"><span class="toc-text">JS部分</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -275,7 +267,7 @@
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     // dynamic User by Hux
-    var _user = 'CH浩';
+    var _user = 'dcharlie123';
 
     // duoshuo comment query.
     var duoshuoQuery = {short_name: _user};
@@ -289,19 +281,6 @@
         || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"dcharlie123"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
 <!-- 多说公共JS代码 end -->
 
 
