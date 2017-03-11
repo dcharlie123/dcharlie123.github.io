@@ -174,7 +174,10 @@
                 
 变量对象创建
 
-function声明比var声明优先级高一点看例子来理解：function test()&#123;    console.log(foo);    console.log(bar);    var foo='Hello';    console.log(foo);    va..
+
+function声明比var声明优先级高一点
+看例子来理解：
+function test()&#123;    console.log(foo);    console.log(bar);    var foo='Hello';    console.log(foo);   ..
             </p>
         </div>
     </a>
@@ -198,21 +201,25 @@ function声明比var声明优先级高一点看例子来理解：function test()
         <div class="post-content-preview">
             <p>
                 原始类型
+
 Boolean
 Number
 String
 Undefined
 Null
 
-对象转Boolean什么时候会进行布尔转换呢：
+对象转Boolean
+什么时候会进行布尔转换呢：
+
 布尔比较时
-if(obj) , while(obj) 等判断时对象转布尔值是最简单的。除了以下几个：
+if(obj) , while(obj) 等判断时
+对象转布尔值是最简单的。除了以下几个：
 0或+0
 undefined
-‘’
+''
 -0
 NaN
-null这..
+n..
             </p>
         </div>
     </a>
@@ -236,8 +243,13 @@ null这..
         <div class="post-content-preview">
             <p>
                 JS部分
-eval直接在函数内部使用则返回的是局部变量function say(str)&#123;    eval(str);    console.log(a);&#125;say("var a=1")//1a//报错
-利用window.eval（）使其成为全局的function say(s..
+
+eval直接在函数内部使用则返回的是局部变量
+function say(str)&#123;    eval(str);    console.log(a);&#125;say("var a=1")//1a//报错
+
+
+利用window.eval（）使其成为全局的
+function ..
             </p>
         </div>
     </a>
@@ -260,11 +272,16 @@ eval直接在函数内部使用则返回的是局部变量function say(str)&#123
         
         <div class="post-content-preview">
             <p>
-                在掘金看到两篇文章absolute和float，想起前几天在慕课网看的张鑫旭老师的课还没总结，so。。。先附上文章地址以后可以翻看，有张鑫旭老师讲的知识点
+                在掘金看到两篇文章absolute和float，想起前几天在慕课网看的张鑫旭老师的课还没总结，so。。。
+先附上文章地址以后可以翻看，有张鑫旭老师讲的知识点
 参考文章
+
 CSS绝对定位absolute详解
-CSS浮动float详解然后。。。Demo：absolute;float其他知识点：
-独立的a..
+CSS浮动float详解
+然后。。。
+
+Demo：absolute;float
+其他知识点..
             </p>
         </div>
     </a>
@@ -288,13 +305,15 @@ CSS浮动float详解然后。。。Demo：absolute;float其他知识点：
         <div class="post-content-preview">
             <p>
                 学习参考文章
+
 学习BFC
 什么是BFC
 CSS定位问题（1）：盒模型、浮动、BFC
 CSS之BFC详解
 
 什么是BFC
-BFC（W3C CSS 2.1 规范中的一个概念）就是所谓的Block formatting contexts （块级格式化上下文）。创建了 BFC的元素就是一个独立的盒子，里..
+
+BFC（W3C CSS 2.1 规范中的一个概念）就是所谓的Block formatting contexts （块级格式化上下文）。创建了 BFC的元素就是一个独立的盒子..
             </p>
         </div>
     </a>
@@ -317,11 +336,12 @@ BFC（W3C CSS 2.1 规范中的一个概念）就是所谓的Block formatting con
         
         <div class="post-content-preview">
             <p>
-                优先级选择器分为4个等级：
+                优先级
+选择器分为4个等级：
 
 内联样式具有最高的优先级
 ID选择器（例如：#example）
-类选择器（class selectors） (例如：.example)，属性选择器（attributes selectors）（例如：[type=”radio”]），伪类选择器（pseudo-class..
+类选择器（class selectors） (例如：.example)，属性选择器（attributes selectors）（例如：[type=&quot;radio&quot;]），伪类选择器（p..
             </p>
         </div>
     </a>
@@ -344,7 +364,9 @@ ID选择器（例如：#example）
         
         <div class="post-content-preview">
             <p>
-                一、零碎知识点①deletedelete x //true 删除一个不存在的属性，返回truefadevar=1 //以这种方式创建的变量是全局对象的可配置的属性delete fadevar //true 变量被删除fadevar //报错this.fadevar1=2 //同上var true..
+                一、零碎知识点
+①delete
+delete x //true 删除一个不存在的属性，返回truefadevar=1 //以这种方式创建的变量是全局对象的可配置的属性delete fadevar //true 变量被删除fadevar //报错this.fadevar1=2 //同上var tr..
             </p>
         </div>
     </a>
@@ -357,9 +379,9 @@ ID选择器（例如：#example）
 
 <div class="post-preview "
      style="background-image: url('')">
-    <a href="/2017/01/11/移动端的1像素边/">
+    <a href="/2017/01/11/yarn体验/">
         <h2 class="post-title">
-            1像素边
+            yarn体验
         </h2>
         <p class="post-meta">
             <i class="fa fa-calendar" aria-hidden="true"></i> 2017-01-11
@@ -367,7 +389,12 @@ ID选择器（例如：#example）
         
         <div class="post-content-preview">
             <p>
-                在移动端由于存在设备像素比的概念所以，border-width:1px在移动端不一定是真正的1像素。所以我们需要用其他方法实现移动端的1像素边框。.tab&#123;    &lt;!--设置目标元素为相对定位--&gt;    position:relative;&#125;@media(-w..
+                安装
+如果已经安装了npm,可以用npm install yarn -g全局安装,也可以上官网yarn参考其他安装方法。
+yarn -version或者yarn -V参考yarn版本
+使用
+项目下初始化
+其实跟npm一样, 在项目文件夹下运行命令行,输入yarn init,接下来就跟npm in..
             </p>
         </div>
     </a>
