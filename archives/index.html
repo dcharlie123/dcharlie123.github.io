@@ -174,7 +174,9 @@
                 
 变量对象创建
 
-function声明比var声明优先级高一点看例子来理解：function test()&#123;    console.log(foo);    console.log(bar);    var foo='Hello';    console.log(foo);    va..
+function声明比var声明优先级高一点this在执行上下文时确定指向，指向被赋予function所属的Object
+
+看例子来理解：function test()&#123;    console.log(foo);    console.log(bar);    var..
             </p>
         </div>
     </a>
@@ -235,9 +237,9 @@ null这..
         
         <div class="post-content-preview">
             <p>
-                JS部分
+                JS部分#1
 eval直接在函数内部使用则返回的是局部变量function say(str)&#123;    eval(str);    console.log(a);&#125;say("var a=1")//1a//报错
-利用window.eval（）使其成为全局的function say(s..
+利用window.eval（）使其成为全局的function say..
             </p>
         </div>
     </a>
