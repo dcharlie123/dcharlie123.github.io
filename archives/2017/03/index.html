@@ -172,11 +172,14 @@
         <div class="post-content-preview">
             <p>
                 
-变量对象创建
 
-function声明比var声明优先级高一点this在执行上下文时确定指向，指向被赋予function所属的Object
+首先创建全局上下文环境
 
-看例子来理解：function test()&#123;    console.log(foo);    console.log(bar);    var..
+然后代码执行到最后一行之前，全局上下文环境中的变量被赋值
+
+执行到最后一行，调用changColor,创建新的执行上下文环境，并压入栈，如图1中第二个所示。
+
+然后执行到swapColor()调用swapColor。。。。再创建一个新的执行上下文环境并入栈，接下来执..
             </p>
         </div>
     </a>
@@ -200,21 +203,25 @@ function声明比var声明优先级高一点this在执行上下文时确定指�
         <div class="post-content-preview">
             <p>
                 原始类型
+
 Boolean
 Number
 String
 Undefined
 Null
 
-对象转Boolean什么时候会进行布尔转换呢：
+对象转Boolean
+什么时候会进行布尔转换呢：
+
 布尔比较时
-if(obj) , while(obj) 等判断时对象转布尔值是最简单的。除了以下几个：
+if(obj) , while(obj) 等判断时
+对象转布尔值是最简单的。除了以下几个：
 0或+0
 undefined
-‘’
+''
 -0
 NaN
-null这..
+n..
             </p>
         </div>
     </a>
@@ -237,9 +244,15 @@ null这..
         
         <div class="post-content-preview">
             <p>
-                JS部分#1
-eval直接在函数内部使用则返回的是局部变量function say(str)&#123;    eval(str);    console.log(a);&#125;say("var a=1")//1a//报错
-利用window.eval（）使其成为全局的function say..
+                JS部分
+#1
+
+eval直接在函数内部使用则返回的是局部变量
+function say(str)&#123;    eval(str);    console.log(a);&#125;say("var a=1")//1a//报错
+
+
+利用window.eval（）使其成为全局的
+functi..
             </p>
         </div>
     </a>
