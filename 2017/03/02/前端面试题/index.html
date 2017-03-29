@@ -184,50 +184,23 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2>JS部分</h2>
-<h3>#1</h3>
-<blockquote>
-<p>eval直接在函数内部使用则返回的是局部变量
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="built_in">eval</span>(str);</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">say(<span class="string">"var a=1"</span>)<span class="comment">//1</span></div><div class="line">a<span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
+                <h2 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h2><h3 id="1"><a href="#1" class="headerlink" title="#1"></a>#1</h3><blockquote>
+<p>eval直接在函数内部使用则返回的是局部变量<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="built_in">eval</span>(str);</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">say(<span class="string">"var a=1"</span>)<span class="comment">//1</span></div><div class="line">a<span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
+<p>利用window.eval（）使其成为全局的<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="built_in">window</span>.eval(str);</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">say(<span class="string">"var a=1"</span>)<span class="comment">//1</span></div><div class="line">a<span class="comment">//1</span></div></pre></td></tr></table></figure></p>
+<p>该函数是立即执行函数，a是var变量声明，所以是局部变量，但是这里的b其实是全局变量；<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a=b=<span class="number">5</span></div><div class="line">&#125;)()</div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">//5</span></div></pre></td></tr></table></figure></p>
 </blockquote>
-<blockquote>
-<p>利用window.eval（）使其成为全局的
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="built_in">window</span>.eval(str);</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">say(<span class="string">"var a=1"</span>)<span class="comment">//1</span></div><div class="line">a<span class="comment">//1</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>该函数是立即执行函数，a是var变量声明，所以是局部变量，但是这里的b其实是全局变量；
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a=b=<span class="number">5</span></div><div class="line">&#125;)()</div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">//5</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<h3>#2</h3>
-<p><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> z=<span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(z)<span class="comment">//z是自由变量，函数定义时就确定了z的取值作用域</span></div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">f</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> z=<span class="number">20</span>;</div><div class="line">    f();</div><div class="line">&#125;)(foo)</div><div class="line"><span class="comment">//10</span></div></pre></td></tr></table></figure></p>
+<h3 id="2"><a href="#2" class="headerlink" title="#2"></a>#2</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> z=<span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(z)<span class="comment">//z是自由变量，函数定义时就确定了z的取值作用域</span></div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">f</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> z=<span class="number">20</span>;</div><div class="line">    f();</div><div class="line">&#125;)(foo)</div><div class="line"><span class="comment">//10</span></div></pre></td></tr></table></figure>
 <p>函数在定义时（<strong>不是调用</strong>），就已经确定了函数体内部自由变量的作用域。</p>
-<h3>#3</h3>
-<p><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">[]==![]<span class="comment">//?</span></div><div class="line">[]==<span class="string">''</span><span class="comment">//?</span></div></pre></td></tr></table></figure></p>
+<h3 id="3"><a href="#3" class="headerlink" title="#3"></a>#3</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">[]==![]<span class="comment">//?</span></div><div class="line">[]==<span class="string">''</span><span class="comment">//?</span></div></pre></td></tr></table></figure>
 <p>答案是。。。都是true。知道答案了，当然还要知道为什么。。。</p>
 <blockquote>
-<p>第一道
-首先[]==[]这个的结果是啥？？？false，纳尼！！！因为数组是引用类型。。。
-做这道题先要知道运算符的优先级
-<img src="%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.png" alt="运算符优先级">
-可以看到<code>!</code>的优先级高于<code>==</code>的优先级，所以先计算<code>![]</code>
-① <code>![]</code>很明显要转Boolean,对象转布尔值，<code>[]</code>转成true然后取反，所以是false。
-② 接下来就是<code>==</code>的运算
-<img src="%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6.jpg" alt="比较运算符.jpg">
-看第8条,当type(y)是Boolean时 x==ToNumber(y);所以是<code>[]==ToNumber(false)</code>即<code>[]==0</code>
-再看第10条，即<code>ToPrimitive([])==0</code>,这个ToPrimitive()其实就是之前讲的对象转化，这里就是<strong>对象转Number</strong>
-所以规则是</p>
+<p>第一道<br>首先[]==[]这个的结果是啥？？？false，纳尼！！！因为数组是引用类型。。。<br>做这道题先要知道运算符的优先级<br><img src="运算符优先级.png" alt="运算符优先级"><br>可以看到<code>!</code>的优先级高于<code>==</code>的优先级，所以先计算<code>![]</code><br>① <code>![]</code>很明显要转Boolean,对象转布尔值，<code>[]</code>转成true然后取反，所以是false。<br>② 接下来就是<code>==</code>的运算<br><img src="比较运算符.jpg" alt="比较运算符.jpg"><br>看第8条,当type(y)是Boolean时 x==ToNumber(y);所以是<code>[]==ToNumber(false)</code>即<code>[]==0</code><br>再看第10条，即<code>ToPrimitive([])==0</code>,这个ToPrimitive()其实就是之前讲的对象转化，这里就是<strong>对象转Number</strong><br>所以规则是</p>
 <ul>
 <li>如果 valueOf 方法存在并且返回原始类型，返回 valueOf 的结果。</li>
 <li>如果 valueOf 方法不存在或者返回的不是原始类型，调用 toString 方法，如果 toString 方法存在，并且返回原始类型数据，返回 toString 的结果。</li>
-<li>其他情况，抛出错误。
-最后ToPrimitive([])=''也就是空字符串，变成 <code>&quot;&quot;==0</code>;
-再看第5条,就是说ToNumber(&quot;&quot;)==0,空字符串ToNumber()会转成<code>+0</code>，
-so。。。结果明显了吧<code>+0==0</code>-&gt;true</li>
+<li>其他情况，抛出错误。<br>最后ToPrimitive([])=’’也就是空字符串，变成 <code>&quot;&quot;==0</code>;<br>再看第5条,就是说ToNumber(“”)==0,空字符串ToNumber()会转成<code>+0</code>，<br>so。。。结果明显了吧<code>+0==0</code>-&gt;true</li>
 </ul>
-</blockquote>
-<blockquote>
-<p>第二道
-看第10条规则，所以是<code>ToPrimitive([])==''</code>,上面讲了<strong>ToPrimitive([])=''也就是空字符串</strong>所以就是<code>''==''</code>当然是true啦</p>
+<p>第二道<br>看第10条规则，所以是<code>ToPrimitive([])==&#39;&#39;</code>,上面讲了<strong>ToPrimitive([])=’’也就是空字符串</strong>所以就是<code>&#39;&#39;==&#39;&#39;</code>当然是true啦</p>
 </blockquote>
 
                 <hr>
@@ -266,7 +239,7 @@ so。。。结果明显了吧<code>+0==0</code>-&gt;true</li>
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">JS部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">#1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">#2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">#3</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS部分"><span class="toc-text">JS部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-text">#1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-text">#2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-text">#3</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>

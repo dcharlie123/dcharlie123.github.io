@@ -281,9 +281,9 @@
 
 <div class="post-preview "
      style="background-image: url('')">
-    <a href="/2017/01/11/yarn体验/">
+    <a href="/2017/01/11/移动端的1像素边/">
         <h2 class="post-title">
-            yarn体验
+            1像素边
         </h2>
         <p class="post-meta">
             <i class="fa fa-calendar" aria-hidden="true"></i> 2017-01-11
@@ -291,12 +291,7 @@
         
         <div class="post-content-preview">
             <p>
-                安装
-如果已经安装了npm,可以用npm install yarn -g全局安装,也可以上官网yarn参考其他安装方法。
-yarn -version或者yarn -V参考yarn版本
-使用
-项目下初始化
-其实跟npm一样, 在项目文件夹下运行命令行,输入yarn init,接下来就跟npm in..
+                在移动端由于存在设备像素比的概念所以，border-width:1px在移动端不一定是真正的1像素。所以我们需要用其他方法实现移动端的1像素边框。.tab&#123;    &lt;!--设置目标元素为相对定位--&gt;    position:relative;&#125;@media(-w..
             </p>
         </div>
     </a>
@@ -319,15 +314,9 @@ yarn -version或者yarn -V参考yarn版本
         
         <div class="post-content-preview">
             <p>
-                注释
-// 单行注释/* 这是一个多行注释多行注释*//* 但是, 你不能, /* 嵌套注释 */ 语法错误 */
-声明
-声明方式
-JavaScript有三种声明。
-var
-声明一个变量，可选择将其初始化为一个值。
-let
-声明一个块作用域的局部变量(block scope local vari..
+                注释// 单行注释/* 这是一个多行注释多行注释*//* 但是, 你不能, /* 嵌套注释 */ 语法错误 */
+声明声明方式JavaScript有三种声明。
+var声明一个变量，可选择将其初始化为一个值。let声明一个块作用域的局部变量(block scope local variable)，..
             </p>
         </div>
     </a>
@@ -350,9 +339,7 @@ let
         
         <div class="post-content-preview">
             <p>
-                url
-url.parse()
-    url.parse('http://www.imooc.com/video/6710');/* Url &#123;  protocol: 'http:',//协议  slashes: true,  auth: null,  host: 'www.imoo..
+                urlurl.parse()    url.parse('http://www.imooc.com/video/6710');/* Url &#123;  protocol: 'http:',//协议  slashes: true,  auth: null,  host: 'www.imooc...
             </p>
         </div>
     </a>
@@ -375,10 +362,7 @@ url.parse()
         
         <div class="post-content-preview">
             <p>
-                前几天看教程看到了一个jqzoom的放大镜插件,突然就想到不久前看慕课的教程有一个封装移动端弹窗的教程(示例)(代码))
-所以自己也想封一个放大镜的插件来练练手，于是抽空开始写了。。。支持简单的扩展
-代码见-&gt;
-大神轻喷~
+                前几天看教程看到了一个jqzoom的放大镜插件,突然就想到不久前看慕课的教程有一个封装移动端弹窗的教程(示例)(代码))所以自己也想封一个放大镜的插件来练练手，于是抽空开始写了。。。支持简单的扩展代码见-&gt;大神轻喷~
 
             </p>
         </div>
@@ -405,10 +389,8 @@ url.parse()
                 ##前端‘学习’？？？
 ###Jekyll博客搭建踩坑记！！！
 ######——————基于window10平台
-####ruby安装
-上rubyinstaller下载ruby&lt;/br&gt;
-默认路径安装（记得勾选上添加到环境变量）&lt;/br&gt;
-等待安装完成,在命令行输入rub..
+####ruby安装上rubyinstaller下载ruby默认路径安装（记得勾选上添加到环境变量）等待安装完成,在命令行输入ruby -v,显示版本号说明安装完成;
+####Dev..
             </p>
         </div>
     </a>
@@ -454,8 +436,7 @@ url.parse()
         
         <div class="post-content-preview">
             <p>
-                JavaScript中get和set
-var foo=&#123; get age()&#123;  return new Date().getFullYear() &#125;, set age(a)&#123;  console.log("age的值是"+a) &#125;&#125;con..
+                JavaScript中get和setvar foo=&#123; get age()&#123;  return new Date().getFullYear() &#125;, set age(a)&#123;  console.log("age的值是"+a) &#125;&#125;cons..
             </p>
         </div>
     </a>
@@ -478,12 +459,9 @@ var foo=&#123; get age()&#123;  return new Date().getFullYear() &#125;, set age(
         
         <div class="post-content-preview">
             <p>
-                test
-前端学习——cookie总结
-cookie : 存储数据，当用户访问了某个网站（网页）的时候，我们就可以通过cookie来像访问者电脑上存储数据
-1. 不同的浏览器存放的cookie位置不一样，也是不能通用的
+                test前端学习——cookie总结cookie : 存储数据，当用户访问了某个网站（网页）的时候，我们就可以通过cookie来像访问者电脑上存储数据1. 不同的浏览器存放的cookie位置不一样，也是不能通用的
 2. cookie的存储是以域名形式进行区分的
-3. cookie的数据可以..
+3. cookie的数据可以设置名..
             </p>
         </div>
     </a>
