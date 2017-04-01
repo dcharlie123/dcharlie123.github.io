@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/my-works/">my-works</a>
+                            <a href="/tags/">文章分类</a>
                         </li>
 							
 						
@@ -88,7 +88,7 @@
                         
 							
                         <li>
-                            <a href="/tags/">文章分类</a>
+                            <a href="/my-works/">my-works</a>
                         </li>
 							
 						
@@ -191,6 +191,10 @@
 </blockquote>
 <h3 id="2"><a href="#2" class="headerlink" title="#2"></a>#2</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> z=<span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(z)<span class="comment">//z是自由变量，函数定义时就确定了z的取值作用域</span></div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">f</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> z=<span class="number">20</span>;</div><div class="line">    f();</div><div class="line">&#125;)(foo)</div><div class="line"><span class="comment">//10</span></div></pre></td></tr></table></figure>
 <p>函数在定义时（<strong>不是调用</strong>），就已经确定了函数体内部自由变量的作用域。</p>
+<blockquote>
+<p>什么是<strong>自由变量</strong>?</p>
+<p>在A作用域中使用的变量x,却没有在A作用域中声明(即在其他作用域中声明的),对于A作用域来说,x就是一个自由变量。</p>
+</blockquote>
 <h3 id="3"><a href="#3" class="headerlink" title="#3"></a>#3</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">[]==![]<span class="comment">//?</span></div><div class="line">[]==<span class="string">''</span><span class="comment">//?</span></div></pre></td></tr></table></figure>
 <p>答案是。。。都是true。知道答案了，当然还要知道为什么。。。</p>
 <blockquote>

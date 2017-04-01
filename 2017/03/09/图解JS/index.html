@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/my-works/">my-works</a>
+                            <a href="/tags/">文章分类</a>
                         </li>
 							
 						
@@ -88,7 +88,7 @@
                         
 							
                         <li>
-                            <a href="/tags/">文章分类</a>
+                            <a href="/my-works/">my-works</a>
                         </li>
 							
 						
@@ -202,7 +202,7 @@
 </blockquote>
 <h3 id="变量对象创建"><a href="#变量对象创建" class="headerlink" title="变量对象创建"></a>变量对象创建</h3><p><img src="变量.png" alt="变量对象创建"></p>
 <blockquote>
-<p>function声明比var声明优先级高一点<br>this在执行上下文时确定指向，指向被赋予function所属的Object</p>
+<p>function声明比var声明优先级高一点<br>this在执行上下文时确定指向，指向被赋予function所属的Object<br>关于this的取值，是在函数真正被调用执行的时候确定的，函数定义时确定不了。<br>函数在定义时（<strong>不是调用</strong>），就已经确定了函数体内部自由变量的作用域。<br><strong>作用域</strong>在函数定义时就确定了，而不是在函数调用时确定。<br>什么是<strong>自由变量</strong>?<br>在A作用域中使用的变量x,却没有在A作用域中声明(即在其他作用域中声明的),对于A作用域来说,x就是一个自由变量。</p>
 </blockquote>
 <p>看例子来理解：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(foo);</div><div class="line">    <span class="built_in">console</span>.log(bar);</div><div class="line">    <span class="keyword">var</span> foo=<span class="string">'Hello'</span>;</div><div class="line">    <span class="built_in">console</span>.log(foo);</div><div class="line">    <span class="keyword">var</span> bar=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'world'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">test();</div></pre></td></tr></table></figure></p>
 <p>其实这段代码=&gt;<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> bar;</div><div class="line">    <span class="built_in">console</span>.log(foo);<span class="comment">//function foo()&#123;return 2;&#125;</span></div><div class="line">    <span class="built_in">console</span>.log(bar);<span class="comment">//undefined</span></div><div class="line">    <span class="keyword">var</span> foo;</div><div class="line">    foo=<span class="string">'Hello'</span><span class="comment">//覆盖foo函数</span></div><div class="line">    <span class="built_in">console</span>.log(foo);<span class="comment">//Hello</span></div><div class="line">    bar=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'world'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
