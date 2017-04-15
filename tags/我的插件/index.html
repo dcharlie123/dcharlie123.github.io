@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        1像素边｜dcharlie123&#39;s blog
+        dcharlie123&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://dcharlie123.github.io/2017/01/11/移动端的1像素边/">
+    <link rel="canonical" href="http://dcharlie123.github.io/tags/我的插件/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="true
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -132,147 +132,165 @@
 
 <!-- Main Content -->
 
-<!--only post-->
 
-
-<img class="wechat-title-img"
-     src="">
-
-
-<style>
-    
-    header.intro-header {
-        background-image: url('')
-    }
-
-    
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <div class="post-heading">
-                    <h1>1像素边</h1>
-                    
-                    <span class="meta">
-                         作者 dcharlie123
-                        <span>
-                          日期 2017-01-11
-                         </span>
-                    </span>
-                    <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#前端CSS笔记,移动端"
-                           title="前端CSS笔记,移动端">前端CSS笔记,移动端</a>
-                        
+<!-- Page Header -->
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+    <div class="row">
+        <header class="intro-header">
+            <div class="container">
+                <div class="site-heading text-center">
+                    <div class="about-me">
+                        <!--移动端头部显示-->
+                        <img src="http://om10n1h33.bkt.clouddn.com/avatar.png"/>
+                        <h5><a href="/about/">dcharlie123</a></h5>
+                        <p>do what u like,f**k the rest</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     </div>
-    <div class="post-title-haojen">
-        <span>
-            1像素边
-        </span>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>在移动端由于存在设备像素比的概念所以，<code>border-width:1px</code>在移动端不一定是真正的1像素。<br>所以我们需要用其他方法实现移动端的1像素边框。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.tab&#123;</div><div class="line">    &lt;!--设置目标元素为相对定位--&gt;</div><div class="line">    position:relative;</div><div class="line">&#125;</div><div class="line">@media(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5)&#123;</div><div class="line">    &lt;!--设置伪类元素--&gt;</div><div class="line">    .tab::after&#123;</div><div class="line">        content:&apos;&apos;;</div><div class="line">        &lt;!--绝对定位--&gt;</div><div class="line">        position:absolute;</div><div class="line">        bottom:0;</div><div class="line">        left:0;</div><div class="line">        &lt;!--与父级等宽--&gt;</div><div class="line">        width:100%;</div><div class="line">        &lt;!--给伪元素添上1px的边框--&gt;</div><div class="line">        border-top: 1px solid rgba(7,17,27,.1);</div><div class="line">        &lt;!--缩小0.5倍（变回目标元素的大小）--&gt;</div><div class="line">        transform: scaleY(0.5);</div><div class="line">        &lt;!--把border包进来--&gt;</div><div class="line">        box-sizing: border-box;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>顺便记一下移动端调试的一种方法,<br>webpack-server服务下<br>windows下在命令行输入<code>ipconfig</code>,可以看到ip地址，找<strong>IPv4 地址</strong>,确保电脑和手机链接同一wifi,在手机浏览器地址栏把PC端的localhost换成ip地址+端口号</p>
-
-                <hr>
-
-<!--                -->
-             
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/2017/01/11/yarn体验/" data-toggle="tooltip" data-placement="top"
-                           title="yarn体验">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/2017/01/02/回归基础-MDN_javascript复习(1)/" data-toggle="tooltip" data-placement="top"
-                           title="回归基础-MDN_javascript复习(1)">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-
-<!--                
-
-                 -->
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC8yODAwMi80NTc5">
-<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
-<!-- City版安装代码已完成 -->
+<!-- Main Content -->
+<div class="container custom-haojen-container">
+    <!-- Post Container -->
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+            <!-- Main Content -->
 
-            </div>
 
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
+
+<div class="post-preview "
+     style="background-image: url('')">
+    <a href="/2017/04/15/datepicker插件及知识点/">
+        <h2 class="post-title">
+            datepicker插件及知识点
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2017-04-15
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                预览:datepickergithub:datepicker
+知识点###日期new Date(year,month,date);//注意这里的month是从0开始，即0 -&gt; 一月//所以这里应该在原本的月份-1，即如果获取12月，new Date(2017,(12-1))
+获取年份va..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+
+<!-- 翻页 pager -->
+
+<ul class="pager">
+    
+    
+</ul>
+
+
+        </div>
+        <!-- Sidebar Container -->
+        <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+
+            <!-- About Me -->
+            <section class="visible-md visible-lg" style="padding: 0 18px">
+                <div class="short-about">
+                    <!--侧边栏头像-->
+                    
+                    <img src="http://om10n1h33.bkt.clouddn.com/avatar.png"/>
+                    
+                    <h5><a href="/about/">dcharlie123</a></h5>
+                    
+                    <p>do what u like,f**k the rest</p>
+                    
+                    <hr>
+                    <!-- SNS Link 社交 -->
+                    <ul class="list-inline">
+                        
+                        
+                        
+                        <li>
+                            <a target="_blank" href="https://www.zhihu.com/people/chun-ding">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        </span>
+                            </a>
+                        </li>
+                        
+
+                        
+                        <li>
+                            <a target="_blank" href="http://weibo.com/dch">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                        </span>
+                            </a>
+                        </li>
+                        
+
+                        
+
+                        
+                        <li>
+                            <a target="_blank" href="https://github.com/dcharlie123">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                            </a>
+                        </li>
+                        
+
+                        
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Featured Tags  标签 -->
+            
+            <section>
+                <div class="tags">
+                    
+                    
+                    <a href="/tags/#前端CSS笔记" title="前端CSS笔记"
+                       rel="3">前端CSS笔记</a>
+                    
+                    
+                    
+                    <a href="/tags/#前端js笔记" title="前端js笔记"
+                       rel="4">前端js笔记</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                 </div>
-            </div>
+            </section>
+            
+
+            
+
         </div>
-
-        <div class="row">
-            <!-- Sidebar Container -->
-
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-                <section>
-                    <!-- no hr -->
-                    <h5 class="text-center">
-                        <a href="/tags/">FEATURED TAGS</a>
-                    </h5>
-                    <div class="tags">
-                        
-                        <a class="tag" href="/tags/#前端CSS笔记,移动端"
-                           title="前端CSS笔记,移动端">前端CSS笔记,移动端</a>
-                        
-                    </div>
-                </section>
-                
-
-                <!-- Friends Blog -->
-                
-            </div>
-        </div>
-
     </div>
-</article>
-
-
-
-
-
+</div>
 
 <!-- Footer -->
 <!-- Footer -->

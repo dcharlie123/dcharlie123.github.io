@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        1像素边｜dcharlie123&#39;s blog
+        datepicker插件及知识点｜dcharlie123&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://dcharlie123.github.io/2017/01/11/移动端的1像素边/">
+    <link rel="canonical" href="http://dcharlie123.github.io/2017/04/15/datepicker插件及知识点/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -153,18 +153,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>1像素边</h1>
+                    <h1>datepicker插件及知识点</h1>
                     
                     <span class="meta">
                          作者 dcharlie123
                         <span>
-                          日期 2017-01-11
+                          日期 2017-04-15
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#前端CSS笔记,移动端"
-                           title="前端CSS笔记,移动端">前端CSS笔记,移动端</a>
+                        <a class="tag" href="/tags/#我的插件"
+                           title="我的插件">我的插件</a>
                         
                     </div>
                 </div>
@@ -173,7 +173,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            1像素边
+            datepicker插件及知识点
         </span>
     </div>
 </header>
@@ -184,8 +184,14 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>在移动端由于存在设备像素比的概念所以，<code>border-width:1px</code>在移动端不一定是真正的1像素。<br>所以我们需要用其他方法实现移动端的1像素边框。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.tab&#123;</div><div class="line">    &lt;!--设置目标元素为相对定位--&gt;</div><div class="line">    position:relative;</div><div class="line">&#125;</div><div class="line">@media(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5)&#123;</div><div class="line">    &lt;!--设置伪类元素--&gt;</div><div class="line">    .tab::after&#123;</div><div class="line">        content:&apos;&apos;;</div><div class="line">        &lt;!--绝对定位--&gt;</div><div class="line">        position:absolute;</div><div class="line">        bottom:0;</div><div class="line">        left:0;</div><div class="line">        &lt;!--与父级等宽--&gt;</div><div class="line">        width:100%;</div><div class="line">        &lt;!--给伪元素添上1px的边框--&gt;</div><div class="line">        border-top: 1px solid rgba(7,17,27,.1);</div><div class="line">        &lt;!--缩小0.5倍（变回目标元素的大小）--&gt;</div><div class="line">        transform: scaleY(0.5);</div><div class="line">        &lt;!--把border包进来--&gt;</div><div class="line">        box-sizing: border-box;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>顺便记一下移动端调试的一种方法,<br>webpack-server服务下<br>windows下在命令行输入<code>ipconfig</code>,可以看到ip地址，找<strong>IPv4 地址</strong>,确保电脑和手机链接同一wifi,在手机浏览器地址栏把PC端的localhost换成ip地址+端口号</p>
+                <p><strong>预览:</strong><a href="https://dcharlie123.github.io/datepicker/datepicker.html">datepicker</a><br><strong>github:</strong><a href="https://github.com/dcharlie123/datepicker" target="_blank" rel="external">datepicker</a></p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p>###日期<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(year,month,date);</div><div class="line"><span class="comment">//注意这里的month是从0开始，即0 -&gt; 一月</span></div><div class="line"><span class="comment">//所以这里应该在原本的月份-1，即如果获取12月，new Date(2017,(12-1))</span></div></pre></td></tr></table></figure></p>
+<h3 id="获取年份"><a href="#获取年份" class="headerlink" title="获取年份"></a>获取年份</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> today=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">today.getYear()<span class="comment">//117</span></div><div class="line"><span class="comment">//注意这样是获取当前年份距离1900年的长度</span></div><div class="line"><span class="comment">//想获取‘2017’这样的格式用：</span></div><div class="line">today.getFullYear()<span class="comment">//2017</span></div></pre></td></tr></table></figure>
+<h3 id="获取月份"><a href="#获取月份" class="headerlink" title="获取月份"></a>获取月份</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getMonth();<span class="comment">//3</span></div><div class="line"><span class="comment">//同样的这里的月份应该是（3+1）=4月；</span></div></pre></td></tr></table></figure>
+<h3 id="获取日"><a href="#获取日" class="headerlink" title="获取日"></a>获取日</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getDate();<span class="comment">//15</span></div></pre></td></tr></table></figure>
+<h3 id="获取星期几"><a href="#获取星期几" class="headerlink" title="获取星期几"></a>获取星期几</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getDay()<span class="comment">//6</span></div><div class="line"><span class="comment">//这里的星期也是从0开始，但不是0=星期一，而是0=周日，1=周一</span></div></pre></td></tr></table></figure>
+<h3 id="上个月（超范围法）"><a href="#上个月（超范围法）" class="headerlink" title="上个月（超范围法）"></a>上个月（超范围法）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2017</span>,<span class="number">4</span>,<span class="number">0</span>);<span class="comment">//Sun Apr 30 2017 00:00:00 GMT+0800 (中国标准时间)</span></div></pre></td></tr></table></figure>
+<p>这里的“4”是五月哦！但是因为日传入“0”所以获取了上个月的最后一天。同样的年也是一样的<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2017</span>,<span class="number">-1</span>);<span class="comment">//Thu Dec 01 2016 00:00:00 GMT+0800 (中国标准时间)</span></div></pre></td></tr></table></figure></p>
 
                 <hr>
 
@@ -193,15 +199,10 @@
              
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2017/01/11/yarn体验/" data-toggle="tooltip" data-placement="top"
-                           title="yarn体验">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2017/01/02/回归基础-MDN_javascript复习(1)/" data-toggle="tooltip" data-placement="top"
-                           title="回归基础-MDN_javascript复习(1)">Next Post &rarr;</a>
+                        <a href="/2017/03/09/图解JS/" data-toggle="tooltip" data-placement="top"
+                           title="图解JS">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -232,7 +233,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点"><span class="toc-text">知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取年份"><span class="toc-text">获取年份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取月份"><span class="toc-text">获取月份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取日"><span class="toc-text">获取日</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取星期几"><span class="toc-text">获取星期几</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上个月（超范围法）"><span class="toc-text">上个月（超范围法）</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -254,8 +255,8 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#前端CSS笔记,移动端"
-                           title="前端CSS笔记,移动端">前端CSS笔记,移动端</a>
+                        <a class="tag" href="/tags/#我的插件"
+                           title="我的插件">我的插件</a>
                         
                     </div>
                 </section>
