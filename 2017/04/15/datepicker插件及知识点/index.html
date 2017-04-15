@@ -185,12 +185,12 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <p><strong>预览:</strong><a href="https://dcharlie123.github.io/datepicker/datepicker.html">datepicker</a><br><strong>github:</strong><a href="https://github.com/dcharlie123/datepicker" target="_blank" rel="external">datepicker</a></p>
-<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p>###日期<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(year,month,date);</div><div class="line"><span class="comment">//注意这里的month是从0开始，即0 -&gt; 一月</span></div><div class="line"><span class="comment">//所以这里应该在原本的月份-1，即如果获取12月，new Date(2017,(12-1))</span></div></pre></td></tr></table></figure></p>
-<h3 id="获取年份"><a href="#获取年份" class="headerlink" title="获取年份"></a>获取年份</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> today=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">today.getYear()<span class="comment">//117</span></div><div class="line"><span class="comment">//注意这样是获取当前年份距离1900年的长度</span></div><div class="line"><span class="comment">//想获取‘2017’这样的格式用：</span></div><div class="line">today.getFullYear()<span class="comment">//2017</span></div></pre></td></tr></table></figure>
-<h3 id="获取月份"><a href="#获取月份" class="headerlink" title="获取月份"></a>获取月份</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getMonth();<span class="comment">//3</span></div><div class="line"><span class="comment">//同样的这里的月份应该是（3+1）=4月；</span></div></pre></td></tr></table></figure>
-<h3 id="获取日"><a href="#获取日" class="headerlink" title="获取日"></a>获取日</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getDate();<span class="comment">//15</span></div></pre></td></tr></table></figure>
-<h3 id="获取星期几"><a href="#获取星期几" class="headerlink" title="获取星期几"></a>获取星期几</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getDay()<span class="comment">//6</span></div><div class="line"><span class="comment">//这里的星期也是从0开始，但不是0=星期一，而是0=周日，1=周一</span></div></pre></td></tr></table></figure>
-<h3 id="上个月（超范围法）"><a href="#上个月（超范围法）" class="headerlink" title="上个月（超范围法）"></a>上个月（超范围法）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2017</span>,<span class="number">4</span>,<span class="number">0</span>);<span class="comment">//Sun Apr 30 2017 00:00:00 GMT+0800 (中国标准时间)</span></div></pre></td></tr></table></figure>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(year,month,date);</div><div class="line"><span class="comment">//注意这里的month是从0开始，即0 -&gt; 一月</span></div><div class="line"><span class="comment">//所以这里应该在原本的月份-1，即如果获取12月，new Date(2017,(12-1))</span></div></pre></td></tr></table></figure>
+<h4 id="获取年份"><a href="#获取年份" class="headerlink" title="获取年份"></a>获取年份</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> today=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">today.getYear()<span class="comment">//117</span></div><div class="line"><span class="comment">//注意这样是获取当前年份距离1900年的长度</span></div><div class="line"><span class="comment">//想获取‘2017’这样的格式用：</span></div><div class="line">today.getFullYear()<span class="comment">//2017</span></div></pre></td></tr></table></figure>
+<h4 id="获取月份"><a href="#获取月份" class="headerlink" title="获取月份"></a>获取月份</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getMonth();<span class="comment">//3</span></div><div class="line"><span class="comment">//同样的这里的月份应该是（3+1）=4月；</span></div></pre></td></tr></table></figure>
+<h4 id="获取日"><a href="#获取日" class="headerlink" title="获取日"></a>获取日</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getDate();<span class="comment">//15</span></div></pre></td></tr></table></figure>
+<h4 id="获取星期几"><a href="#获取星期几" class="headerlink" title="获取星期几"></a>获取星期几</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">today.getDay()<span class="comment">//6</span></div><div class="line"><span class="comment">//这里的星期也是从0开始，但不是0=星期一，而是0=周日，1=周一</span></div></pre></td></tr></table></figure>
+<h4 id="上个月（超范围法）"><a href="#上个月（超范围法）" class="headerlink" title="上个月（超范围法）"></a>上个月（超范围法）</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2017</span>,<span class="number">4</span>,<span class="number">0</span>);<span class="comment">//Sun Apr 30 2017 00:00:00 GMT+0800 (中国标准时间)</span></div></pre></td></tr></table></figure>
 <p>这里的“4”是五月哦！但是因为日传入“0”所以获取了上个月的最后一天。同样的年也是一样的<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2017</span>,<span class="number">-1</span>);<span class="comment">//Thu Dec 01 2016 00:00:00 GMT+0800 (中国标准时间)</span></div></pre></td></tr></table></figure></p>
 
                 <hr>
@@ -198,6 +198,11 @@
 <!--                -->
              
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/04/15/footer置底/" data-toggle="tooltip" data-placement="top"
+                           title="footer置底">&larr; Previous Post</a>
+                    </li>
                     
                     
                     <li class="next">
@@ -233,7 +238,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点"><span class="toc-text">知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取年份"><span class="toc-text">获取年份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取月份"><span class="toc-text">获取月份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取日"><span class="toc-text">获取日</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取星期几"><span class="toc-text">获取星期几</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上个月（超范围法）"><span class="toc-text">上个月（超范围法）</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点"><span class="toc-text">知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#日期"><span class="toc-text">日期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取年份"><span class="toc-text">获取年份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取月份"><span class="toc-text">获取月份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取日"><span class="toc-text">获取日</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取星期几"><span class="toc-text">获取星期几</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上个月（超范围法）"><span class="toc-text">上个月（超范围法）</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
